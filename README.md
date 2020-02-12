@@ -6,6 +6,6 @@ PHW 142 Spring 2020 R Tutorials
 
 <p>Access this week's R Tutorial <a href="https://xandersph.shinyapps.io/RTutorial-Week1/", target = _blank>here</a></p>
 
-	<code>This Shiny app was made in RStudio.</code>
+	This Shiny app was made in RStudio.
 
-© 2020 Xander Posner, xander@berkeley.edu
+<p>© 2020 Xander Posner, <a href="mailto:xander@berkeley.edu?subject=PHW142">xander@berkeley.edu</a></p>
