@@ -1,0 +1,257 @@
+
+---
+title: Problem Set week_one
+output: 
+  html_document: 
+    keep_md: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+# Load libraries and source extra code
+library(tidyverse)
+library(readxl)
+library(RTutor)
+
+
+# Options for rendering data frames
+# If you knit to a Word docx file, try
+# 
+# data.frame.theme="word" 
+# 
+# (needs RStudio > 1.2.1)
+# 
+# You can also set the options like
+# table.max.cols as chunk options
+# Makes sense if there are too many, too wide
+# columns in some chunks
+
+RTutor::set.knit.print.opts(data.frame.theme="code", table.max.rows=25, table.max.cols=NULL, round.digits=5, signif.digits=8)
+
+
+# continue knitting even if there is an error
+knitr::opts_chunk$set(error = TRUE) 
+```
+
+
+## Exercise Overview
+
+<h1>Week 1 - Descriptive Statistics & Data Visualization using ggplot2</h1>
+
+
+<h4>Author: Xander Posner, Epi/Biostat MPH '20</h4>
+<h4>Check out the <code>source code</code> for this project on <a href="https://github.com/posnerab/RTutorial-Week1", target = _blank>Github</a></h4>
+
+
+
+<h3>Tools Used in this Tutorial</h3>
+
+<p>In this tutorial, we will: </p>
+
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+
+<h3>R Packages Used in this Tutorial</h3>
+
+<ul>
+<li><code>"tidyverse"</code></li>
+<li><code>"readxl"</code></li>
+</ul>
+
+<p>When practicing on your own in RStudio, you will first need to install each of these packages using the <code>install.packages("")</code> function, putting the name(s) of the package(s) inside the quotation marks like this:</p> 
+
+<div id="block-quotes" class="section level2">
+<blockquote>
+<p><code>install.packages("tidyverse")</code> OR <code>install.packages(c("tidyverse", "readxl"))</code></p>
+</blockquote>
+</div>
+
+<p>You <strong>won't</strong> need to <i>install</i> packages more than once on the same computer.</p>
+
+<p>After installing, you must load each package library <strong>separately</strong>, using the <code>library()</code> function, putting the name of each package inside the parentheses without quotation marks like this:</p>
+
+<div id="block-quotes" class="section level2">
+<blockquote>
+<li><p><code>library(tidyverse)</code></p></li>
+<li><p><code>library(readxl)</code></p></li>
+</blockquote>
+</div>
+
+<p>You <strong>will</strong> need to <i>load</i> packages each time you need to use them, using the <code>library()</code> function whenever you initiate a new R session.</p> 
+
+<p><strong>You don't need to install any packages for this tutorial</strong>. Just press <strong>check</strong> to run any chunk with a <code>library()</code> function in it.</p>
+
+
+<h3>R Functions Used in this Tutorial</h3>
+
+<ul>
+<li><code>library()</code> to load each package library</li>
+<li><code>read_excel()</code> to read in Excel spreadsheets</li>
+<li><code>head()</code> to view the first few lines of your dataset</li>
+<li><code>nrow()</code> to view the number of rows in your dataset</li>
+<li><code>summary()</code> to produce summary statistics</li>
+<li><code>mean()</code> to find the mean of a given variable</li>
+<li><code>sd()</code> to find the standard deviation of a given variable</li>
+
+
+Click the "Go to next exercise..." button to continue.
+
+
+## Exercise 1 -- Get Started
+
+<p>Some code chunks are finished for you; just press <strong>check</strong> to proceed. Other chunks require you to modify and/or add code before pressing <strong>check</strong> to move through the tutorial.</p>
+<p>If you get stuck, use the <strong>hint</strong> in each code chunk first. If you're still having trouble, head to Piazza and post your question.</p>
+
+<strong>Make sure you run each chunk in order!</strong>
+
+<h3>Loading and getting to know your data</h3> 
+
+a) This chunk loads the package libraries, reads in the Excel spreadsheet using the <code>read_excel()</code> function, and assigns the spreadsheet to an object called <code>bmi_adol_men</code> in the global environment.  
+```{r "1_a"}
+## Don't modify this code; just press check to continue.
+library(tidyverse)
+library(readxl)
+library(epiR)
+
+
+
+bmi_adol_men <- read_excel("bmi_young_men.xlsx", col_names = T)
+```
+
+
+b) View just the first few lines of the <code>bmi_adol_men</code> dataset by using the <code>head()</code> function. 
+<p><code>head()</code> is a really useful function both when starting analysis and getting acquainted with your dataset or if you just need a quick reminder of the column names.</p>
+```{r "1_b_2"}
+head(bmi_adol_men)
+```
+
+<p>The <code>head()</code> function by default shows you the first six lines, but you can change this if you'd like, using the <code>n = </code> argument inside the <code>head()</code> function.</p> 
+
+
+c) View the number of rows in your dataset, which here amounts to our sample size, $n$.
+```{r "1_c_3"}
+nrow(bmi_adol_men)
+```
+
+<h3>Summarizing your data</h3> 
+
+<p>R has many ways to view summary statistics. The simplest is the <code>summary()</code> function.</p>
+
+<p>The dollar sign <code>$</code> is used to index or "choose" column names that represent different variables in your dataset with this syntax:</p>
+
+<div id="block-quotes" class="section level2">
+<blockquote>
+<p><code><"DATASET OBJECT">$<"COLUMN NAME"></code></p>
+</blockquote>
+</div>
+
+d) Run the chunk below to see what summary statistics the <code>summary()</code> function produces.
+```{r "1_d_4"}
+summary(bmi_adol_men$bmi)
+```
+
+
+
+***
+
+### Award: Summary
+You summarized it! Click 'Go to next exercise...' to continue.
+
+***
+
+
+
+
+## Exercise 2 -- Calculating Confidence Intervals for a Mean
+
+a) Find the mean and standard deviation of <code>bmi_adol_men$bmi</code> using the <code>mean()</code> and <code>sd()</code> functions.
+
+<p>The first is done for you; mean BMI is already assigned to an object called <code>mean_bmi</code>. Modify the code below it to assign the object <code>std_dev_bmi</code> to the standard deviation of <code>bmi_adol_men$bmi</code> using the <code>sd()</code> function.</p>
+```{r "2_a_5"}
+bmi_adol_men <- read_excel("bmi_young_men.xlsx", col_names = T)
+mean_bmi <- mean(bmi_adol_men$bmi)
+mean_bmi
+std_dev_bmi <- "<<<<<<<YOUR CODE HERE>>>>>>>"
+std_dev_bmi
+std_dev_bmi <- sd(bmi_adol_men$bmi)
+```
+
+
+b) Find the standard error of the sample estimator of the population mean using this formula: $$\frac{σ}{\sqrt{n}}$$ where $σ$ is the standard deviation and $n$ is your sample size.
+```{r "2_b_6"}
+se_bmi <- "<<<<<<<YOUR CODE HERE>>>>>>>"
+se_bmi
+se_bmi <- sd(bmi_adol_men$bmi)/sqrt(50)
+se_bmi
+```
+
+
+
+Quiz: What would be your alpha for a 95% CI?
+
+- 0.95 [ ]
+
+- 5 [ ]
+
+- 0.025 [ ]
+
+- 0.05 [x]
+
+
+
+Quiz: What is the probability, p, or area under the t-distribution curve for a 95% CI?
+
+- 0.95 [ ]
+
+- 0.025 [ ]
+
+- 0.975 [x]
+
+- 0.05 [ ]
+
+
+
+
+c) Modify the code below to find the critical $t^*$ value for a 95% confidence interval (CI) using the <code>qt()</code> function.
+```{r "2_c_7"}
+t_star_95 <- qt(p = "<<<<<<<YOUR CODE HERE>>>>>>>", 
+                df = "<<<<<<<YOUR CODE HERE>>>>>>>", 
+                lower.tail = "<<<<<<<TRUE OR FALSE>>>>>>>")
+t_star_95
+t_star_95 <- qt(p = 0.975, df = 49, lower.tail = TRUE)
+t_star_95
+
+```
+
+    
+
+
+Quiz: What would be your alpha for a 90% CI?
+
+- 0.10 [x]
+
+- 10 [ ]
+
+- 0.05 [ ]
+
+- 0.9 [ ]
+
+
+
+
+
+Quiz: What would be your p in the <code>qt()</code> function above for a 90% CI?
+
+- 0.9 [ ]
+
+- 0.975 [ ]
+
+- 0.95 [x]
+
+- 0.1 [ ]
+
+
