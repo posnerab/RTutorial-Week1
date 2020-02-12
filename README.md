@@ -4,7 +4,7 @@ PHW 142, Spring 2020 R Tutorials
 
 bCourses: https://bcourses.berkeley.edu/courses/1492259/pages/week-1
 
-R Tutorial Link: https://xandersph.shinyapps.io/RTutorial-Week1/
+R Tutorial Link: https://xandersph.shinyapps.io/RTutorial-Week1/_blank
 
 	This shiny app was made in RStudio.
 
