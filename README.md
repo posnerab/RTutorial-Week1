@@ -3,9 +3,9 @@ PHW 142, Spring 2020 R Tutorials
 
 Week 1 - Descriptive Statistics and Data Visualization using ggplot2
 
-bCourses: https://bcourses.berkeley.edu/courses/1492259/pages/week-1
+	bCourses: https://bcourses.berkeley.edu/courses/1492259/pages/week-1
 
-Stable link:
+R Tutorial Link: https://xandersph.shinyapps.io/RTutorial-Week1/
 
 This shiny app was made in RStudio.
 
