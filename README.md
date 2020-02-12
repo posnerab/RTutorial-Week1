@@ -6,6 +6,6 @@ bCourses: https://bcourses.berkeley.edu/courses/1492259/pages/week-1
 
 R Tutorial Link: https://xandersph.shinyapps.io/RTutorial-Week1/
 
-	This shiny app was made in RStudio.
+	This Shiny app was made in RStudio.
 
 © 2020 Xander Posner, xander@berkeley.edu
