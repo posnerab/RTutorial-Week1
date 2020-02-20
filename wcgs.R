@@ -1,0 +1,5 @@
+wcgs <- read_excel("wcgs_data.xlsx", col_names = TRUE)
+wcgs_new <- read.csv("wcgs_data_new.csv", header = TRUE)
+library(tidyverse)
+library(readxl)
+library(readr)

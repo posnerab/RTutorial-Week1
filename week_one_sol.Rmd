@@ -6,11 +6,13 @@
 library(RTutor)
 setwd(getwd())
 ps.name = "week_one"; sol.file = paste0(ps.name,"_sol.Rmd")
-libs = c("tidyverse", 
+libs = c("tidyverse",
+         "readr",
          "readxl") # character vector of all packages you load in the problem set
 
 name.rmd.chunks(sol.file)
-create.ps(sol.file = sol.file, ps.name = ps.name, libs = libs, addons = "quiz")
+create.ps(sol.file = sol.file, ps.name = ps.name, libs = libs, addons = "quiz",
+          extra.code.file = "wcgs.R")
 
 
 # The following line directly shows the problem set 
@@ -22,6 +24,9 @@ show.ps(ps.name, launch.browser = TRUE,  auto.save.code = FALSE, sample.solution
 ## Exercise Overview
 
 <h1>Week 1 - Descriptive Statistics & Data Visualization using ggplot2</h1>
+<ul>
+<li>Access this week's bCourses site <a href="https://bcourses.berkeley.edu/courses/1492259/pages/week-1", target = _blank>here</a></li>
+</ul>
 
 
 <h4>Author: Xander Posner, Epi/Biostat MPH '20</h4>
@@ -34,9 +39,10 @@ show.ps(ps.name, launch.browser = TRUE,  auto.save.code = FALSE, sample.solution
 <p>In this tutorial, we will: </p>
 
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li>Change some variable types (e.g., character to numeric)</li>
+<li>Dichotomize the BMI variable (change from continuous to binary)</li>
+<li>Generate summary statistics and figures</li>
+<li>Interpret your summary statistics and figures</li>
 </ul>
 
 
@@ -45,6 +51,7 @@ show.ps(ps.name, launch.browser = TRUE,  auto.save.code = FALSE, sample.solution
 <ul>
 <li><code>"tidyverse"</code></li>
 <li><code>"readxl"</code></li>
+<li><code>"readr"</code></li>
 </ul>
 
 <p>When practicing on your own in RStudio, you will first need to install each of these packages using the <code>install.packages("")</code> function, putting the name(s) of the package(s) inside the quotation marks like this:</p> 
@@ -78,9 +85,12 @@ show.ps(ps.name, launch.browser = TRUE,  auto.save.code = FALSE, sample.solution
 <li><code>read_excel()</code> to read in Excel spreadsheets</li>
 <li><code>head()</code> to view the first few lines of your dataset</li>
 <li><code>nrow()</code> to view the number of rows in your dataset</li>
+<li><code>str()</code> to view the "structure" of your dataset, including variable names and types</li>
 <li><code>summary()</code> to produce summary statistics</li>
 <li><code>mean()</code> to find the mean of a given variable</li>
 <li><code>sd()</code> to find the standard deviation of a given variable</li>
+<li><code>geom_hist()</code> and <code>geom_bar()</code> from the <code>ggplot</code> package to create histograms and bar charts</li>
+</ul>
 
 
 Click the "Go to next exercise..." button to continue.
@@ -93,58 +103,77 @@ Click the "Go to next exercise..." button to continue.
 
 <strong>Make sure you run each chunk in order!</strong>
 
-<h3>Loading and getting to know your data</h3> 
+<h3>Get to Know Your Data</h3> 
 
-a) This chunk loads the package libraries, reads in the Excel spreadsheet using the <code>read_excel()</code> function, and assigns the spreadsheet to an object called <code>bmi_adol_men</code> in the global environment.  
+
+a) Get to know the <code>wcgs</code> dataset. Click "check" to observe what these functions do.
 ```{r "1_a"}
 #< task
-## Don't modify this code; just press check to continue.
-library(tidyverse)
-library(readxl)
-library(epiR)
-
-
-
-bmi_adol_men <- read_excel("bmi_young_men.xlsx", col_names = T)
+head(wcgs) # view the first six rows of the dataset in table format
 #>
 ```
 
 
-b) View just the first few lines of the <code>bmi_adol_men</code> dataset by using the <code>head()</code> function. 
-<p><code>head()</code> is a really useful function both when starting analysis and getting acquainted with your dataset or if you just need a quick reminder of the column names.</p>
+b) View the number of rows in your dataset, which here amounts to our sample size, $n$.
 ```{r "1_b"}
 #< task
-head(bmi_adol_men)
+n <- nrow(wcgs)
 #>
 ```
 
-<p>The <code>head()</code> function by default shows you the first six lines, but you can change this if you'd like, using the <code>n = </code> argument inside the <code>head()</code> function.</p> 
+<p>Notice that when we assigned the <code>nrow() function</code> to the <code>object</code> named <code>n</code>, R doesn't immediately <i>print</i> the result. Instead the resulting value is saved in your <code>Global Environment</code>.</p>
 
-
-c) View the number of rows in your dataset, which here amounts to our sample size, $n$.
+c) Here are the ways you can have the results of a function print to your Console. Press <strong>check</strong> to observe.
 ```{r "1_c"}
 #< task
-nrow(bmi_adol_men)
+nrow(wcgs) # PRINTS to the console but DOES NOT save the value
+
+n <- nrow(wcgs) # SAVES the value but DOES NOT print
+
+n # PRINTS out the results that you previously saved above
+
+n + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment
+
+print(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step
 #>
 ```
+
+<p><strong>NOTE. R is cAsE sEnSiTiVe.</strong><code>N</code> would be an entirely separate object from <code>n</code> from R's perspective.</p>
+
+
 
 <h3>Summarizing your data</h3> 
 
 <p>R has many ways to view summary statistics. The simplest is the <code>summary()</code> function.</p>
 
-<p>The dollar sign <code>$</code> is used to index or "choose" column names that represent different variables in your dataset with this syntax:</p>
-
-<div id="block-quotes" class="section level2">
-<blockquote>
-<p><code><"DATASET OBJECT">$<"COLUMN NAME"></code></p>
-</blockquote>
-</div>
-
 d) Run the chunk below to see what summary statistics the <code>summary()</code> function produces.
 ```{r "1_d"}
 #< task
-summary(bmi_adol_men$bmi)
+summary(wcgs)
 #>
+```
+
+<p>You will notice the <code>summary()</code> function prints out the following values for each variable in the <code>wcgs</code> dataset:<p>
+<ul>
+<li>The minimum value</li>
+<li>The value at Q1, the first quartile (25th percentile)</li>
+<li>The median value or Q2 (50th percentile)</li>
+<li>The mean (average) value</li>
+<li>The value at Q3, the third quartile (75th percentile)</li>
+<li>The maximum value</li>
+</ul>
+
+e) Use the dollar sign <code>$</code> to access different variables in your dataset. The first one is done for you. Fill in the code below to summarize the Height0 variable.
+```{r "1_e"}
+#< task
+summary(wcgs$Age0)
+#>
+#< task_notest
+sum_Height0 <- "<<<<<<YOUR CODE HERE>>>>>>"
+sum_Height0
+#>
+sum_Height0 <- summary(wcgs$Height0)
+sum_Height0
 ```
 
 
@@ -152,107 +181,107 @@ summary(bmi_adol_men$bmi)
 You summarized it! Click 'Go to next exercise...' to continue.
 #>
 
+## Exercise 2 -- Modify Your Dataset
 
+<h3>Make Factor Variables</h3>
 
-## Exercise 2 -- Calculating Confidence Intervals for a Mean
-
-a) Find the mean and standard deviation of <code>bmi_adol_men$bmi</code> using the <code>mean()</code> and <code>sd()</code> functions.
-
-<p>The first is done for you; mean BMI is already assigned to an object called <code>mean_bmi</code>. Modify the code below it to assign the object <code>std_dev_bmi</code> to the standard deviation of <code>bmi_adol_men$bmi</code> using the <code>sd()</code> function.</p>
+a) First, view the structure of your dataset using the <code>str()</code> function. Click <strong>Check</strong> to observe. Notice the different variable "types."
 ```{r "2_a"}
 #< task
-bmi_adol_men <- read_excel("bmi_young_men.xlsx", col_names = T)
-mean_bmi <- mean(bmi_adol_men$bmi)
-mean_bmi
-#>
-#< task_notest
-std_dev_bmi <- "<<<<<<<YOUR CODE HERE>>>>>>>"
-std_dev_bmi
-#>
-std_dev_bmi <- sd(bmi_adol_men$bmi)
-#< hint
-display("Delete the quotation marks and everything inside them. Use the sd() function to find the standard deviation of BMI and assign it to the std_dev_bmi object.")
+str(wcgs)
 #>
 ```
 
-
-b) Find the standard error of the sample estimator of the population mean using this formula: $$\frac{σ}{\sqrt{n}}$$ where $σ$ is the standard deviation and $n$ is your sample size.
+b) Now create a new variable that's equal to 1 if someone currently smokes any cigarettes and 0 if they don't
 ```{r "2_b"}
-#< task_notest
-se_bmi <- "<<<<<<<YOUR CODE HERE>>>>>>>"
-se_bmi
-#>
-se_bmi <- sd(bmi_adol_men$bmi)/sqrt(50)
-se_bmi
-#< hint
-display("Use the <code>sd()</code> function you used in the last chunk, and make sure you use the right sample size.")
+#< task
+wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1
+
+wcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0
 #>
 ```
 
+<p>The square brackets indicate an R operation called "subsetting." This operation tells R to set the value of <code>Smoker0</code> to 0 if the <code>Ncigs0</code> value for that individual is 0.</p>
 
-#< quiz "Alpha"
-question: What would be your alpha for a 95% CI?
-sc:
-    - 0.95
-    - 5
-    - 0.025
-    - 0.05*
-success: Great job! Alpha is your confidence level, equal to 1-0.XX, where XX is your XX% confidence interval.
-failure: Try again. Alpha is your confidence level, equal to 1-0.XX, where XX is your XX% confidence interval.
-#>
-
-#< quiz "p"
-question: What is the probability, p, or area under the t-distribution curve for a 95% CI?
-sc:
-    - 0.95
-    - 0.025
-    - 0.975*
-    - 0.05
-success: Nice work! p is your area under the t-distribution curve with n-1 degrees of freedom (where n is your sample size) that's to the LEFT of your given confidence level for a one-sided or one-tailed t-test.
-failure: Try again. p is your area under the t-distribution curve that's to the LEFT of your given confidence level for a one-sided or one-tailed t-test.
-#>
+<p><strong>Note that we had to use two equal signs when we specified the condition for subsetting.</strong> This isn't the case when using symbols for greater than/equal to (> / >=) or less than/equal to (< / <=).</p>
 
 
-
-c) Modify the code below to find the critical $t^*$ value for a 95% confidence interval (CI) using the <code>qt()</code> function.
+c) Now try making a "yes/no" factor variable for systolic blood pressure, <code>Sbp0</code>, just like we did for smoking above. Call the new variable <code>HighSbp0</code> and set it equal to 0 if <code>Sbp0</code> is less than (<) 140.
 ```{r "2_c"}
 #< task_notest
-t_star_95 <- qt(p = "<<<<<<<YOUR CODE HERE>>>>>>>", 
-                df = "<<<<<<<YOUR CODE HERE>>>>>>>", 
-                lower.tail = "<<<<<<<TRUE OR FALSE>>>>>>>")
-t_star_95
-#>
-t_star_95 <- qt(p = 0.975, df = 49, lower.tail = TRUE)
-t_star_95
-#< hint
-display("p is the probability or 'area' under a t-distribution curve with df, degrees of freedom, equal to the sample size, n, minus 1 (n-1). p is equal to 1-(alpha/2) for a one-tailed t-test, where alpha is your confidence level (0.05 or 5% for a 95% CI). The lower.tail argument is known as a 'logical' operator and can only take the boolean values TRUE or FALSE. Set lower.tail equal to TRUE to get the area to the left of your probability, p, or FALSE to find the area to the right of p.")
-#>
+wcgs$HighSbp0 <- "<<<<<<YOUR CODE HERE>>>>>>"
 
+"<<<<<<YOUR CODE HERE>>>>>>" <- 0
+#>
+wcgs$HighSbp0 <- 1
+
+wcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0
 ```
 
-    
 
-#< quiz "Alpha90"
-question: What would be your alpha for a 90% CI?
-sc:
-    - 0.10*
-    - 10
-    - 0.05
-    - 0.90
-success: Great job! Alpha is your confidence level, equal to 1-0.XX, where XX is your XX% confidence interval.
-failure: Try again. Alpha is your confidence level, equal to 1-0.XX, where XX is your XX% confidence interval. What is the "confidence level" for a 90% CI?
+<h3>Create a new BMI variable</h3>
+
+<p>The <code>wcgs</code> dataset has the height variable, <code>Height0</code>, in inches (in) and the weight variable, <code>Weight0</code>, in pounds (lbs). We want to analyze BMI, which is equal to weight (mass) in kilograms divided by height in meters squared, so we'll have to convert height to centimeters (cm) and weight to kilograms (kg).
+
+d) Create new variables for height, weight, and BMI in the wcgs dataset by using the assignment operator (<-) like so:
+```{r "2_d"}
+#< task
+wcgs$Heightcm0 <- wcgs$Height0 * 2.54
+# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.
+
+wcgs$Weightkg0 <- wcgs$Weight0/2.2
+
+wcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)
 #>
+```
 
-
-
-#< quiz "p90"
-question: What would be your p in the <code>qt()</code> function above for a 90% CI?
-sc:
-    - 0.90
-    - 0.975
-    - 0.95*
-    - 0.10
-success: Nice work! p is your probability under the t-distribution curve with n-1 degrees of freedom. It is equal to 1-alpha/2 where alpha is your confidence level.
-failure: Try again. p is your probability under the t-distribution curve with n-1 degrees of freedom. It is equal to 1-alpha/2 where alpha is your confidence level. *Hint* You found alpha in the quiz above.
+e) This chunk writes the <code>wcgs</code>data frame, including the new variables we created, to a comma separated value (.csv) file named "wcgs_data_new.csv". The csv file is then loaded into R and assigned to the <code>wcgs_new</code> object so it can be called later on.
+```{r "2_e"}
+#< task
+wcgs_new <- write_csv(wcgs, "wcgs_data_new.csv")
 #>
+```
+
+
+f) Now, use the head() function again to view the first six lines of the <code>wcgs_new</code> dataset. You will notice that there are now five new columns with the variable names we assigned and the values we calculated.
+```{r "2_f"}
+#< task_notest
+head(wcgs_new)
+#>
+```
+
+## Exercise 3 -- Create Histograms & Box Plots
+
+a) Create a histogram for the <code>Sbp0</code> variable.
+```{r "3_a"}
+#< task
+ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +
+  geom_histogram(binwidth = 10, 
+                 color = "black", 
+                 fill = "blue") +
+  labs(title = "WCGS Systolic Blood Pressure at Baseline", 
+       subtitle = "n = 3154 men ages 39 to 59", 
+       x = "SBP in mmHg", y = "Density" ) +
+  scale_x_continuous(limits = c(0, 250), 
+                     breaks = c(50, 100, 150, 200, 250), 
+                     labels = c(50, 100, 150, 200, 250)) +
+  theme(plot.title = element_text(hjust = 0.5), 
+        plot.subtitle = element_text(hjust = 0.5))
+#>
+```
+
+b) Create a box plot for the <code>Sbp0</code> variable.
+```{r "3_b"}
+#< task
+ggplot(wcgs_new, aes(y = Sbp0)) +
+  geom_boxplot(width = 0.5) +
+  scale_x_continuous(labels = NULL) +
+  labs(y = "SBP in mmHg", 
+       x = "", 
+       title = "WCGS Systolic Blood Pressure at Baseline", 
+       subtitle = "n = 3154 men ages 39 to 59") +
+  theme(plot.title = element_text(hjust = 0.5), 
+        plot.subtitle = element_text(hjust = 0.5))
+#>
+```
 

@@ -16,3 +16,415 @@
 ,
 {"type":["init_ps"],"time":["2020-02-12 13:25:12"],"user":["default_user"],"umph":[1581542712.4857],"ok":[true]}
 ,
+{"type":["init_ps"],"time":["2020-02-12 14:16:42"],"user":["default_user"],"umph":[1581545802.0308],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-02-12 14:27:53"],"user":["default_user"],"umph":[1581546473.8275],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-02-12 14:28:32"],"user":["default_user"],"umph":[1581546512.7677],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-02-12 14:49:15"],"user":["default_user"],"umph":[1581547755.1762],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:49:36"],"user":["default_user"],"umph":[1581547776.6826],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:49:45"],"user":["default_user"],"umph":[1581547785.5081],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:49:53"],"user":["default_user"],"umph":[1581547793.3753],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:50:42"],"user":["default_user"],"umph":[1581547842.0344],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:51:04"],"user":["default_user"],"umph":[1581547864.9504],"ok":[false],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(bmi_adol_men$bmi)"],"message":["evaluation error in \n  summary(bmi_adol_men$bmi)\n  Error in summary(bmi_adol_men$bmi): object 'bmi_adol_men' not found\n"]}
+,
+{"type":["init_ps"],"time":["2020-02-12 14:53:36"],"user":["default_user"],"umph":[1581548016.7275],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:53:42"],"user":["default_user"],"umph":[1581548022.5152],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:53:45"],"user":["default_user"],"umph":[1581548025.4239],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 14:53:49"],"user":["default_user"],"umph":[1581548029.0534],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-12 15:01:21"],"user":["default_user"],"umph":[1581548481.928],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:01:30"],"user":["default_user"],"umph":[1581548490.3798],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:01:38"],"user":["default_user"],"umph":[1581548498.1394],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:01:41"],"user":["default_user"],"umph":[1581548501.1114],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:02:33"],"user":["default_user"],"umph":[1581548553.9999],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:02:45"],"user":["default_user"],"umph":[1581548565.902],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:03:01"],"user":["default_user"],"umph":[1581548581.4171],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-12 15:28:05"],"user":["default_user"],"umph":[1581550085.5992],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:11"],"user":["default_user"],"umph":[1581550091.3356],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:12"],"user":["default_user"],"umph":[1581550092.6658],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:14"],"user":["default_user"],"umph":[1581550094.2977],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:15"],"user":["default_user"],"umph":[1581550095.3678],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:16"],"user":["default_user"],"umph":[1581550096.7895],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:28:18"],"user":["default_user"],"umph":[1581550098.3115],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-12 15:33:33"],"user":["default_user"],"umph":[1581550413.4723],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:38"],"user":["default_user"],"umph":[1581550418.4621],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:40"],"user":["default_user"],"umph":[1581550420.5096],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:41"],"user":["default_user"],"umph":[1581550421.7151],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:42"],"user":["default_user"],"umph":[1581550422.9874],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:44"],"user":["default_user"],"umph":[1581550424.35],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 15:33:46"],"user":["default_user"],"umph":[1581550426.1843],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-12 16:21:02"],"user":["default_user"],"umph":[1581553262.9176],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 16:21:17"],"user":["default_user"],"umph":[1581553277.0068],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-12 16:21:18"],"user":["default_user"],"umph":[1581553278.9936],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-15 11:11:31"],"user":["default_user"],"umph":[1581793891.6704],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-02-15 11:57:55"],"user":["default_user"],"umph":[1581796675.6737],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:58:11"],"user":["default_user"],"umph":[1581796691.9211],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:58:16"],"user":["default_user"],"umph":[1581796696.7359],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:58:20"],"user":["default_user"],"umph":[1581796700.5185],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:58:27"],"user":["default_user"],"umph":[1581796707.1069],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:58:43"],"user":["default_user"],"umph":[1581796723.213],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:59:04"],"user":["default_user"],"umph":[1581796744.8011],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 11:59:12"],"user":["default_user"],"umph":[1581796752.1298],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["init_ps"],"time":["2020-02-15 12:01:35"],"user":["default_user"],"umph":[1581796895.76],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:01:46"],"user":["default_user"],"umph":[1581796906.6738],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:01:48"],"user":["default_user"],"umph":[1581796908.957],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:01:50"],"user":["default_user"],"umph":[1581796910.9395],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:01:53"],"user":["default_user"],"umph":[1581796913.5608],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:01:56"],"user":["default_user"],"umph":[1581796916.1704],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:02:06"],"user":["default_user"],"umph":[1581796926.998],"ok":[false],"chunk":[6],"ex":[2],"e.ind":[2],"code":["summary(wcgs$Age0)\nsum_Height0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\nsum_Height0\n"],"message":["\nYou have not made a correct assignment to sum_Height0."]}
+,
+{"type":["hint"],"time":["2020-02-15 12:02:07"],"user":["default_user"],"umph":[1581796927.0596],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[2]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:02:18"],"user":["default_user"],"umph":[1581796938.9569],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:02:23"],"user":["default_user"],"umph":[1581796943.6892],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[1],"code":[""],"message":["\nYou have not yet made an assignment to wcgs."]}
+,
+{"type":["init_ps"],"time":["2020-02-15 12:03:05"],"user":["default_user"],"umph":[1581796985.4493],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:03:22"],"user":["default_user"],"umph":[1581797002.9558],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs <- read_excel(\"wcgs_data.xlsx\", col_names = TRUE)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:03:26"],"user":["default_user"],"umph":[1581797006.7342],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:03:30"],"user":["default_user"],"umph":[1581797010.2784],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 12:03:33"],"user":["default_user"],"umph":[1581797013.5597],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-15 14:54:04"],"user":["default_user"],"umph":[1581807244.0446],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-02-15 14:55:39"],"user":["default_user"],"umph":[1581807339.1153],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:55:58"],"user":["default_user"],"umph":[1581807358.3723],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:01"],"user":["default_user"],"umph":[1581807361.3745],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:04"],"user":["default_user"],"umph":[1581807364.1199],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:06"],"user":["default_user"],"umph":[1581807366.6847],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:10"],"user":["default_user"],"umph":[1581807370.298],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:24"],"user":["default_user"],"umph":[1581807384.5996],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:31"],"user":["default_user"],"umph":[1581807391.2382],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["\nstr(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:56:56"],"user":["default_user"],"umph":[1581807416.368],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs <- read_excel(\"wcgs_data.xlsx\", col_names = TRUE)\nstr(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:57:14"],"user":["default_user"],"umph":[1581807434.9284],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-15 14:57:16"],"user":["default_user"],"umph":[1581807436.9876],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["head(wcgs)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 13:58:57"],"user":["default_user"],"umph":[1582063137.1355],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 13:59:41"],"user":["default_user"],"umph":[1582063181.4313],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 14:25:44"],"user":["default_user"],"umph":[1582064744.4731],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:25:50"],"user":["default_user"],"umph":[1582064750.6431],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:25:55"],"user":["default_user"],"umph":[1582064755.7493],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:25:59"],"user":["default_user"],"umph":[1582064759.7503],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:26:12"],"user":["default_user"],"umph":[1582064772.8451],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:26:40"],"user":["default_user"],"umph":[1582064800.7344],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:27:09"],"user":["default_user"],"umph":[1582064829.3635],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:27:19"],"user":["default_user"],"umph":[1582064839.062],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["\nstr(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["init_ps"],"time":["2020-02-18 14:32:42"],"user":["default_user"],"umph":[1582065162.7496],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:48"],"user":["default_user"],"umph":[1582065168.4797],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:50"],"user":["default_user"],"umph":[1582065170.2179],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:51"],"user":["default_user"],"umph":[1582065171.499],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:53"],"user":["default_user"],"umph":[1582065173.0377],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:54"],"user":["default_user"],"umph":[1582065174.6722],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:32:56"],"user":["default_user"],"umph":[1582065176.4648],"ok":[false],"chunk":[6],"ex":[2],"e.ind":[2],"code":["summary(wcgs$Age0)\nsum_Height0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\nsum_Height0\n"],"message":["\nYou have not made a correct assignment to sum_Height0."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:33:07"],"user":["default_user"],"umph":[1582065187.7647],"ok":[false],"chunk":[6],"ex":[2],"e.ind":[2],"code":["summary(wcgs$Age0)\nsum_Height0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\nsum_Height0\n"],"message":["\nYou have not made a correct assignment to sum_Height0."]}
+,
+{"type":["hint"],"time":["2020-02-18 14:33:07"],"user":["default_user"],"umph":[1582065187.7804],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[2]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:33:17"],"user":["default_user"],"umph":[1582065197.66],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:33:25"],"user":["default_user"],"umph":[1582065205.6295],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)\nstr(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:33:50"],"user":["default_user"],"umph":[1582065230.0786],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:34:10"],"user":["default_user"],"umph":[1582065250.3752],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- factor(x = wcgs$Smoker0,\n                       labels = c(\"No\", \"Yes\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:34:16"],"user":["default_user"],"umph":[1582065256.0306],"ok":[false],"chunk":[10],"ex":[3],"e.ind":[1],"code":["wcgs$HighSbp0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\n\n\"<<<<<<YOUR CODE HERE>>>>>>\" <- 0\n\nwcgs$HighSbp0 <- factor(x = \"<<<<<<YOUR CODE HERE>>>>>>\",\n                        labels = \"<<<<<<YOUR CODE HERE>>>>>>\")\n"],"message":["\nYou have assigned 2 times a value to the variable wcgs$HighSbp0 in your chunk. While you might get the correct result in RStudio, RTutor can only check your result if you assign a value to wcgs$HighSbp0 only once in your chunk."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:35:31"],"user":["default_user"],"umph":[1582065331.3449],"ok":[false],"chunk":[10],"ex":[3],"e.ind":[1],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n\nwcgs$HighSbp0 <- factor(x = wcgs$HighSbp0,\n                        labels = c(\"No\", \"Yes\"))\n"],"message":["\nYou have assigned 2 times a value to the variable wcgs$HighSbp0 in your chunk. While you might get the correct result in RStudio, RTutor can only check your result if you assign a value to wcgs$HighSbp0 only once in your chunk."]}
+,
+{"type":["init_ps"],"time":["2020-02-18 14:39:39"],"user":["default_user"],"umph":[1582065579.9448],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:39:48"],"user":["default_user"],"umph":[1582065588.5409],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:39:50"],"user":["default_user"],"umph":[1582065590.7462],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:39:52"],"user":["default_user"],"umph":[1582065592.7149],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:39:54"],"user":["default_user"],"umph":[1582065594.7826],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:39:56"],"user":["default_user"],"umph":[1582065596.8444],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:40:14"],"user":["default_user"],"umph":[1582065614.5701],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:40:18"],"user":["default_user"],"umph":[1582065618.6018],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)\nstr(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:40:22"],"user":["default_user"],"umph":[1582065622.9542],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 14:45:28"],"user":["default_user"],"umph":[1582065928.3538],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:33"],"user":["default_user"],"umph":[1582065933.8134],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)\n\n\n\nwcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:35"],"user":["default_user"],"umph":[1582065935.2028],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:36"],"user":["default_user"],"umph":[1582065936.5779],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:37"],"user":["default_user"],"umph":[1582065937.9877],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:39"],"user":["default_user"],"umph":[1582065939.4299],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:45:51"],"user":["default_user"],"umph":[1582065951.725],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:46:04"],"user":["default_user"],"umph":[1582065964.6317],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs <- read_excel(\"wcgs_data.xlsx\", col_names = T)\nstr(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:46:06"],"user":["default_user"],"umph":[1582065966.7501],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:46:14"],"user":["default_user"],"umph":[1582065974.7643],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- factor(x = wcgs$Smoker0,\n                       labels = c(\"No\", \"Yes\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:46:47"],"user":["default_user"],"umph":[1582066007.5396],"ok":[false],"chunk":[10],"ex":[3],"e.ind":[3],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":["\nYou have not made a correct assignment to wcgs$HighSbp0."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 14:47:05"],"user":["default_user"],"umph":[1582066025.391],"ok":[false],"chunk":[10],"ex":[3],"e.ind":[3],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":["\nYou have not made a correct assignment to wcgs$HighSbp0."]}
+,
+{"type":["hint"],"time":["2020-02-18 14:47:05"],"user":["default_user"],"umph":[1582066025.4066],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[3]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:12:29"],"user":["default_user"],"umph":[1582067549.7723],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:35"],"user":["default_user"],"umph":[1582067555.0683],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:36"],"user":["default_user"],"umph":[1582067556.4184],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:39"],"user":["default_user"],"umph":[1582067559.7884],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:42"],"user":["default_user"],"umph":[1582067562.8134],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:44"],"user":["default_user"],"umph":[1582067564.6187],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:54"],"user":["default_user"],"umph":[1582067574.84],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:12:58"],"user":["default_user"],"umph":[1582067578.2373],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:13:00"],"user":["default_user"],"umph":[1582067580.4645],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:13:03"],"user":["default_user"],"umph":[1582067583.2106],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- factor(x = wcgs$Smoker0,\n                       labels = c(\"No\", \"Yes\"))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:20:03"],"user":["default_user"],"umph":[1582068003.6709],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:08"],"user":["default_user"],"umph":[1582068008.8732],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:11"],"user":["default_user"],"umph":[1582068011.1917],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:12"],"user":["default_user"],"umph":[1582068012.3571],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:14"],"user":["default_user"],"umph":[1582068014.2424],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:16"],"user":["default_user"],"umph":[1582068016.2883],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:30"],"user":["default_user"],"umph":[1582068030.778],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:34"],"user":["default_user"],"umph":[1582068034.5407],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:37"],"user":["default_user"],"umph":[1582068037.0005],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:39"],"user":["default_user"],"umph":[1582068039.454],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- factor(x = wcgs$Smoker0,\n                       labels = c(\"No\", \"Yes\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:20:58"],"user":["default_user"],"umph":[1582068058.6599],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:21:22"],"user":["default_user"],"umph":[1582068082.6505],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- factor(x = wcgs$HighSbp0,\n                        labels = c(\"No\", \"Yes\"))\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:21:27"],"user":["default_user"],"umph":[1582068087.8197],"ok":[true],"chunk":[12],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\n\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:21:30"],"user":["default_user"],"umph":[1582068090.2884],"ok":[true],"chunk":[13],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:21:33"],"user":["default_user"],"umph":[1582068093.7478],"ok":[true],"chunk":[14],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:42:42"],"user":["default_user"],"umph":[1582069362.6514],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:42:57"],"user":["default_user"],"umph":[1582069377.117],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:42:58"],"user":["default_user"],"umph":[1582069378.696],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:00"],"user":["default_user"],"umph":[1582069380.9712],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:02"],"user":["default_user"],"umph":[1582069382.658],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:04"],"user":["default_user"],"umph":[1582069384.6883],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:06"],"user":["default_user"],"umph":[1582069386.3564],"ok":[false],"chunk":[6],"ex":[2],"e.ind":[2],"code":["summary(wcgs$Age0)\nsum_Height0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\nsum_Height0\n"],"message":["\nYou have not made a correct assignment to sum_Height0."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:13"],"user":["default_user"],"umph":[1582069393.6812],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:17"],"user":["default_user"],"umph":[1582069397.1103],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:19"],"user":["default_user"],"umph":[1582069399.1119],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:33"],"user":["default_user"],"umph":[1582069413.8632],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:35"],"user":["default_user"],"umph":[1582069415.4104],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\n\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:37"],"user":["default_user"],"umph":[1582069417.1533],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:39"],"user":["default_user"],"umph":[1582069419.0833],"ok":[true],"chunk":[12],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:43:45"],"user":["default_user"],"umph":[1582069425.4642],"ok":[false],"chunk":[13],"ex":[4],"e.ind":[1],"code":["# Enter your code here."],"message":["\nYou have not yet entered all correct commands."]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:44:09"],"user":["default_user"],"umph":[1582069449.4699],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:14"],"user":["default_user"],"umph":[1582069454.6649],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["## Don't modify this code; just press check to continue.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(readr)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:15"],"user":["default_user"],"umph":[1582069455.8043],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:16"],"user":["default_user"],"umph":[1582069456.9713],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:18"],"user":["default_user"],"umph":[1582069458.5168],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:19"],"user":["default_user"],"umph":[1582069459.5552],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:28"],"user":["default_user"],"umph":[1582069468.0727],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:31"],"user":["default_user"],"umph":[1582069471.764],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:33"],"user":["default_user"],"umph":[1582069473.4751],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:53"],"user":["default_user"],"umph":[1582069493.8055],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:54"],"user":["default_user"],"umph":[1582069494.8709],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\n\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:44:57"],"user":["default_user"],"umph":[1582069497.0692],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:45:02"],"user":["default_user"],"umph":[1582069502.2052],"ok":[true],"chunk":[12],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:45:06"],"user":["default_user"],"umph":[1582069506.0841],"ok":[true],"chunk":[13],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, color = \"black\", fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250)  , \n            breaks = c(50, 100, 150, 200, 250) ,\n            labels = c(50, 100, 150, 200, 250) ) +\n  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:50:14"],"user":["default_user"],"umph":[1582069814.8853],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:20"],"user":["default_user"],"umph":[1582069820.4357],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:22"],"user":["default_user"],"umph":[1582069822.2658],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:23"],"user":["default_user"],"umph":[1582069823.675],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:25"],"user":["default_user"],"umph":[1582069825.0711],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:33"],"user":["default_user"],"umph":[1582069833.0947],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:46"],"user":["default_user"],"umph":[1582069846.7014],"ok":[true],"chunk":[6],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:50:48"],"user":["default_user"],"umph":[1582069848.0691],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:03"],"user":["default_user"],"umph":[1582069863.5338],"ok":[false],"chunk":[8],"ex":[3],"e.ind":[2],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0] <- 0\n"],"message":["\nYou have not yet made an assignment to wcgs$HighSbp0[wcgs$Sbp0 < 140]."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:09"],"user":["default_user"],"umph":[1582069869.9845],"ok":[false],"chunk":[8],"ex":[3],"e.ind":[2],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp < 140] <- 0\n"],"message":["\nYou have not yet made an assignment to wcgs$HighSbp0[wcgs$Sbp0 < 140]."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:14"],"user":["default_user"],"umph":[1582069874.9833],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:16"],"user":["default_user"],"umph":[1582069876.3072],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\n\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:17"],"user":["default_user"],"umph":[1582069877.8888],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:19"],"user":["default_user"],"umph":[1582069879.1381],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:51:22"],"user":["default_user"],"umph":[1582069882.0307],"ok":[true],"chunk":[12],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, color = \"black\", fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250) ) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:57:46"],"user":["default_user"],"umph":[1582070266.5804],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:57:54"],"user":["default_user"],"umph":[1582070274.0444],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:57:55"],"user":["default_user"],"umph":[1582070275.8528],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:57:58"],"user":["default_user"],"umph":[1582070278.157],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:57:59"],"user":["default_user"],"umph":[1582070279.8466],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:01"],"user":["default_user"],"umph":[1582070281.0253],"ok":[false],"chunk":[5],"ex":[2],"e.ind":[2],"code":["summary(wcgs$Age0)\nsum_Height0 <- \"<<<<<<YOUR CODE HERE>>>>>>\"\nsum_Height0\n"],"message":["\nYou have not made a correct assignment to sum_Height0."]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:07"],"user":["default_user"],"umph":[1582070287.7216],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs$Age0)\nsum_Height0 <- summary(wcgs$Height0)\nsum_Height0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:11"],"user":["default_user"],"umph":[1582070291.5676],"ok":[true],"chunk":[6],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:14"],"user":["default_user"],"umph":[1582070294.0457],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1\n\nwcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:28"],"user":["default_user"],"umph":[1582070308.663],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$HighSbp0 <- 1\n\nwcgs$HighSbp0[wcgs$Sbp0 < 140] <- 0\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:30"],"user":["default_user"],"umph":[1582070310.0897],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$Heightcm0 <- wcgs$Height0 * 2.54\n# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$Weightkg0 <- wcgs$Weight0/2.2\n\nwcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:31"],"user":["default_user"],"umph":[1582070311.4784],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:32"],"user":["default_user"],"umph":[1582070312.6812],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:58:36"],"user":["default_user"],"umph":[1582070316.127],"ok":[true],"chunk":[12],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, color = \"black\", fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250) ) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-02-18 15:59:11"],"user":["default_user"],"umph":[1582070351.9737],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:59:21"],"user":["default_user"],"umph":[1582070361.026],"ok":[true],"chunk":[12],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-02-18 15:59:23"],"user":["default_user"],"umph":[1582070363.5419],"ok":[true],"chunk":[13],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = Sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,

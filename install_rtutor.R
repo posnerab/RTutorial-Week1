@@ -36,3 +36,4 @@ install.rtutor = function(update.cran=FALSE, update.github=TRUE, lib=.libPaths()
   }
   library(RTutor)
 }
+install.rtutor()
