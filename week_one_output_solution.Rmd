@@ -39,13 +39,18 @@ knitr::opts_chunk$set(error = TRUE)
 
 ## Exercise Overview
 
-<h1>Week 1 - Descriptive Statistics & Data Visualization using ggplot2</h1>
-<ul>
-<li>Access this week's bCourses site <a href="https://bcourses.berkeley.edu/courses/1492482/pages/week-1", target = _blank>here</a></li>
-</ul>
+<h1>Week 1 - Data Analysis & Visualization in R</h1>
 
 
-<h4>Author: Xander Posner, Epi/Biostat MPH '20</h4>
+
+<h4>PBHLTH W142: UC Berkeley School of Public Health</h4>
+<div id="block-quotes" class="section level2">
+<blockquote>
+<p>Author: Xander Posner, Graduate Student Instructor</p>
+<p><a href="mailto:xander@berkeley.edu?subject=PHW142">xander@berkeley.edu</a></p>
+</blockquote>
+</div>
+<h4>Access this week's bCourses site <a href="https://bcourses.berkeley.edu/courses/1492482/pages/week-1", target = _blank>here</a></h4>
 <h4>Check out the <code>source code</code> for this project on <a href="https://github.com/posnerab/RTutorial-Week1", target = _blank>Github</a></h4>
 
 
@@ -55,8 +60,9 @@ knitr::opts_chunk$set(error = TRUE)
 <p>In this tutorial, we will: </p>
 
 <ul>
-<li>Change some variable types (e.g., character to numeric)</li>
-<li>Dichotomize the BMI variable (change from continuous to binary)</li>
+<li>Get to know the Western Collaborative Group Study (wcgs) dataset from the <code>epitools</code> package</li>
+<li>Change some variable types (e.g., numeric to factor)</li>
+<li>Create a new BMI variable based on existing height and weight measurements</li>
 <li>Generate summary statistics and figures</li>
 <li>Interpret your summary statistics and figures</li>
 </ul>
@@ -66,15 +72,14 @@ knitr::opts_chunk$set(error = TRUE)
 
 <ul>
 <li><code>"tidyverse"</code></li>
-<li><code>"readxl"</code></li>
-<li><code>"readr"</code></li>
+<li><code>"epitools"</code></li>
 </ul>
 
 <p>When practicing on your own in RStudio, you will first need to install each of these packages using the <code>install.packages("")</code> function, putting the name(s) of the package(s) inside the quotation marks like this:</p> 
 
 <div id="block-quotes" class="section level2">
 <blockquote>
-<p><code>install.packages("tidyverse")</code> OR <code>install.packages(c("tidyverse", "readxl"))</code></p>
+<p><code>install.packages("tidyverse")</code> OR <code>install.packages(c("tidyverse", "epitools"))</code></p>
 </blockquote>
 </div>
 
@@ -85,7 +90,7 @@ knitr::opts_chunk$set(error = TRUE)
 <div id="block-quotes" class="section level2">
 <blockquote>
 <li><p><code>library(tidyverse)</code></p></li>
-<li><p><code>library(readxl)</code></p></li>
+<li><p><code>library(epitools)</code></p></li>
 </blockquote>
 </div>
 
@@ -98,14 +103,12 @@ knitr::opts_chunk$set(error = TRUE)
 
 <ul>
 <li><code>library()</code> to load each package library</li>
-<li><code>read_excel()</code> to read in Excel spreadsheets</li>
+<li><code>data()</code> to read built-in datasets into R</li>
 <li><code>head()</code> to view the first few lines of your dataset</li>
 <li><code>nrow()</code> to view the number of rows in your dataset</li>
 <li><code>str()</code> to view the "structure" of your dataset, including variable names and types</li>
 <li><code>summary()</code> to produce summary statistics</li>
-<li><code>mean()</code> to find the mean of a given variable</li>
-<li><code>sd()</code> to find the standard deviation of a given variable</li>
-<li><code>geom_hist()</code> and <code>geom_bar()</code> from the <code>ggplot</code> package to create histograms and bar charts</li>
+<li><code>ggplot()</code>, <code>geom_histogram()</code>, <code>geom_boxplot()</code>, and <code>geom_col</code> to create histograms, boxplots, and bar charts</li>
 </ul>
 
 

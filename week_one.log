@@ -724,3 +724,27 @@
 ,
 {"type":["check_chunk"],"time":["2020-03-06 16:54:41"],"user":["default_user"],"umph":[1583542481.2053],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["library(epitools)\nlibrary(tidyverse) # helps us make charts and graphics\nlibrary(readr)\nlibrary(markdown)\nlibrary(DescTools)\n\ndata(wcgs)"],"message":[""]}
 ,
+{"type":["init_ps"],"time":["2020-03-06 17:22:13"],"user":["default_user"],"umph":[1583544133.3022],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:22:28"],"user":["default_user"],"umph":[1583544148.1227],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:24:29"],"user":["default_user"],"umph":[1583544269.5692],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:27:04"],"user":["default_user"],"umph":[1583544424.446],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:28:02"],"user":["default_user"],"umph":[1583544482.2922],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:30:14"],"user":["default_user"],"umph":[1583544614.3544],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:33:44"],"user":["default_user"],"umph":[1583544824.0012],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:35:38"],"user":["default_user"],"umph":[1583544938.7254],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-06 17:37:13"],"user":["default_user"],"umph":[1583545033.5854],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-06 17:38:07"],"user":["default_user"],"umph":[1583545087.5573],"ok":[true],"chunk":[14],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-06 17:38:10"],"user":["default_user"],"umph":[1583545090.0077],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-06 17:38:12"],"user":["default_user"],"umph":[1583545092.1642],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
