@@ -1,7 +1,9 @@
 library(RTutor)
 library(tidyverse)
+library(epitools)
 library(readr)
-library(readxl)
+library(markdown)
+library(DescTools)
 
 setwd("./work")
 app =  show.ps(user.name = "Guest",

@@ -1,5 +1,8 @@
-wcgs <- read_excel("wcgs_data.xlsx", col_names = TRUE)
-wcgs_new <- read.csv("wcgs_data_new.csv", header = TRUE)
-library(tidyverse)
-library(readxl)
-library(readr)
+# library(tidyverse)
+# library(readr)
+# library(epitools)
+# library(markdown)
+
+wcgs <- read_csv("wcgs_data.csv", col_names = TRUE)
+wcgs_new <- read_csv("wcgs_data_new.csv", col_names = TRUE)
+levels(wcgs_new$dibpat0) <- c("A", "B")

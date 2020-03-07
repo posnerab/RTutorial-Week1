@@ -18,7 +18,7 @@ check.problem.set('week_one', ps.dir, ps.file, user.name=user.name, reset=FALSE)
 
 <h1>Week 1 - Descriptive Statistics & Data Visualization using ggplot2</h1>
 <ul>
-<li>Access this week's bCourses site <a href="https://bcourses.berkeley.edu/courses/1492259/pages/week-1", target = _blank>here</a></li>
+<li>Access this week's bCourses site <a href="https://bcourses.berkeley.edu/courses/1492482/pages/week-1", target = _blank>here</a></li>
 </ul>
 
 
@@ -99,21 +99,32 @@ Click the "Go to next exercise..." button to continue.
 <h3>Get to Know Your Data</h3> 
 
 
-a) Get to know the <code>wcgs</code> dataset. Click "check" to observe what these functions do.
+a) The <code>wcgs</code> dataset is built into the <code>epitools</code> package. As long as you load the libraries first using the <code>library()</code> functions, you will be able to load the dataset by calling <code>data(wcgs)</code> as shown below. Click "check" to continue.
 ```{r "1_a"}
+library(epitools)
+library(tidyverse) # helps us make charts and graphics
+library(readr)
+library(markdown)
+library(DescTools)
+
+data(wcgs)
+```
+
+b) Now that the <code>wcgs</code> dataset is loaded into your environment, use the <code>head()</code> function to view the first six rows.
+```{r "1_b"}
 head(wcgs) # view the first six rows of the dataset in table format
 ```
 
 
-b) View the number of rows in your dataset, which here amounts to our sample size, $n$.
-```{r "1_b"}
+c) Use the <code>nrow()</code> function to calculate the number of rows in your dataset, which here amounts to our sample size, $n$.
+```{r "1_c"}
 n <- nrow(wcgs)
 ```
 
-<p>Notice that when we assigned the <code>nrow() function</code> to the <code>object</code> named <code>n</code>, R doesn't immediately <i>print</i> the result. Instead the resulting value is saved in your <code>Global Environment</code>.</p>
+<p>Notice that when we assigned the <code>nrow()</code> function to the <code>object</code> named <code>n</code>, R doesn't immediately <i>print</i> the result. Instead the resulting value is saved in your <code>Global Environment</code>.</p>
 
-c) Here are the ways you can have the results of a function print to your Console. Press <strong>check</strong> to observe.
-```{r "1_c"}
+d) Here are the ways you can have the results of a function print to your Console. Press <strong>check</strong> to observe.
+```{r "1_d"}
 nrow(wcgs) # PRINTS to the console but DOES NOT save the value
 
 n <- nrow(wcgs) # SAVES the value but DOES NOT print
@@ -133,8 +144,8 @@ print(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one s
 
 <p>R has many ways to view summary statistics. The simplest is the <code>summary()</code> function.</p>
 
-d) Run the chunk below to see what summary statistics the <code>summary()</code> function produces.
-```{r "1_d"}
+e) Run the chunk below to see what summary statistics the <code>summary()</code> function produces.
+```{r "1_e"}
 summary(wcgs)
 ```
 
@@ -148,11 +159,13 @@ summary(wcgs)
 <li>The maximum value</li>
 </ul>
 
-e) Use the dollar sign <code>$</code> to access different variables in your dataset. The first one is done for you. Fill in the code below to summarize the Height0 variable.
-```{r "1_e"}
-summary(wcgs$Age0)
-sum_Height0 <- "<<<<<<YOUR CODE HERE>>>>>>"
-sum_Height0
+f) Use the dollar sign <code>$</code> to access different variables in your dataset. The first one is done for you. Fill in the code below to summarize the <code>height0</code> variable.
+```{r "1_f"}
+summary_age0 <- summary(wcgs$age0)
+summary_age0
+
+summary_height0 <- "<<<<<<YOUR CODE HERE>>>>>>"
+summary_height0
 
 ```
 
@@ -167,21 +180,40 @@ a) First, view the structure of your dataset using the <code>str()</code> functi
 str(wcgs)
 ```
 
-b) Now create a new variable that's equal to 1 if someone currently smokes any cigarettes and 0 if they don't
+b) Notice that the dichotomous behavioral pattern variable, <code>dibpat0</code>, is currently coded as an integer (1 = Type A, 0 = Type B). We want R to know that <code>behpat0</code> is a factor variable with 2 discrete levels: A and B. To do this, we will use the following code:
 ```{r "2_b"}
-wcgs$Smoker0 <- 1 # creates a new variable called Smoker0 and sets the value for all individuals to 1
+wcgs$dibpat0[wcgs$dibpat0 == 1] <- "A"
 
-wcgs$Smoker0[wcgs$Ncigs0 == 0] <- 0
+wcgs$dibpat0[wcgs$dibpat0 == 0] <- "B"
+
+levels(wcgs$dibpat0) <- c("A", "B")
 ```
 
-<p>The square brackets indicate an R operation called "subsetting." This operation tells R to set the value of <code>Smoker0</code> to 0 if the <code>Ncigs0</code> value for that individual is 0.</p>
 
-<p><strong>Note that we had to use two equal signs when we specified the condition for subsetting.</strong> This isn't the case when using symbols for greater than/equal to (> / >=) or less than/equal to (< / <=).</p>
-
-
-c) Now try making a "yes/no" factor variable for systolic blood pressure, <code>Sbp0</code>, just like we did for smoking above. Call the new variable <code>HighSbp0</code> and set it equal to 0 if <code>Sbp0</code> is less than (<) 140.
+c) Now create a new variable called <code>smoker0</code> that is equal to 1 if someone currently smokes any cigarettes and 0 if they don't
 ```{r "2_c"}
-wcgs$HighSbp0 <- "<<<<<<YOUR CODE HERE>>>>>>"
+wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0
+
+wcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0.
+```
+
+<p>The square brackets indicate an R operation called "subsetting." This operation tells R to set the value of <code>smoker0</code> to 0 if the <code>ncigs0</code> value for that individual is 0.</p>
+
+<p><strong>Note that we had to use two equal signs (==) when we specified the second condition for subsetting.</strong></p>
+
+<h4>Options for Subsetting Conditions</h4>
+<ul>
+<li><code>dataset$variable == X</code></li> (equal to some number X)
+<li><code>dataset$variable < Y</code></li> (less than some number Y)
+<li><code>dataset$variable > Z</code></li> (greater than some number Z)
+<li><code>dataset$variable <= A</code></li> (less than or equal to some number A)
+<li><code>dataset$variable >= B</code></li> (greater than or equal to some number B)
+</ul>
+
+
+d) Now try making a "yes/no" factor variable for systolic blood pressure, <code>sbp0</code>, just like we did for smoking above. Call the new variable <code>highsbp0</code> and set it equal to 1 if <code>sbp0</code> is greater than or equal to 140, and set it equal to 0 if <code>sbp0</code> is less than 140.
+```{r "2_d"}
+"<<<<<<YOUR CODE HERE>>>>>>" <- 1
 
 "<<<<<<YOUR CODE HERE>>>>>>" <- 0
 
@@ -190,34 +222,33 @@ wcgs$HighSbp0 <- "<<<<<<YOUR CODE HERE>>>>>>"
 
 <h3>Create a new BMI variable</h3>
 
-<p>The <code>wcgs</code> dataset has the height variable, <code>Height0</code>, in inches (in) and the weight variable, <code>Weight0</code>, in pounds (lbs). We want to analyze BMI, which is equal to weight (mass) in kilograms divided by height in meters squared, so we'll have to convert height to centimeters (cm) and weight to kilograms (kg).
+<p>The <code>wcgs</code> dataset has the height variable, <code>height0</code>, in inches (in) and the weight variable, <code>weight0</code>, in pounds (lbs). We want to analyze BMI, which is equal to weight (mass) in kilograms divided by height in meters squared, so we'll have to convert height to centimeters (cm) and weight to kilograms (kg).</p>
 
-d) Create new variables for height, weight, and BMI in the wcgs dataset by using the assignment operator (<-) like so:
-```{r "2_d"}
-wcgs$Heightcm0 <- wcgs$Height0 * 2.54
-# this line of code tells R to take the Height0 value for each individual (row) in the dataset, multiply it by 2.54 and then add the value to a new variable (column) we named Heightcm0.
+e) Create new variables for height, weight, and BMI in the wcgs dataset by using the assignment operator (<-) like so:
+```{r "2_e"}
+wcgs$heightcm0 <- round(wcgs$height0 * 2.54, digits = 2)
+# this line of code tells R to take the Height0 value for each individual (row) in the wcgs dataset, multiply it by 2.54, round the result to 2 decimal places (digits), and then add the value to a new variable (column) we named Heightcm0.
 
-wcgs$Weightkg0 <- wcgs$Weight0/2.2
+wcgs$weightkg0 <- round(wcgs$weight0/2.2, digits = 2)
 
-wcgs$BMI0 <- wcgs$Weightkg0/((wcgs$Heightcm0/100)^2)
+wcgs$BMI0 <- round(wcgs$weightkg0/((wcgs$heightcm0/100)^2), digits = 1)
 ```
 
-e) This chunk writes the <code>wcgs</code>data frame, including the new variables we created, to a comma separated value (.csv) file named "wcgs_data_new.csv". The csv file is then loaded into R and assigned to the <code>wcgs_new</code> object so it can be called later on.
-```{r "2_e"}
+f) This chunk writes the <code>wcgs</code>data frame, including the new variables we created, to a comma separated value (.csv) file named "wcgs_data_new.csv". The csv file is then loaded into R and assigned to the <code>wcgs_new</code> object so it can be called later on.
+```{r "2_f"}
 wcgs_new <- write_csv(wcgs, "wcgs_data_new.csv")
 ```
 
-
-f) Now, use the head() function again to view the first six lines of the <code>wcgs_new</code> dataset. You will notice that there are now five new columns with the variable names we assigned and the values we calculated.
-```{r "2_f"}
+g) Now, use the head() function again to view the first six lines of the <code>wcgs_new</code> dataset. You will notice that there are now five new columns with the variable names we assigned and the values we calculated.
+```{r "2_g"}
 head(wcgs_new)
 ```
 
 ## Exercise 3 -- Create Histograms & Box Plots
 
-a) Create a histogram for the <code>Sbp0</code> variable.
+a) Create a histogram for the <code>sbp0</code> variable.
 ```{r "3_a"}
-ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +
+ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +
   geom_histogram(binwidth = 10, 
                  color = "black", 
                  fill = "blue") +
@@ -231,9 +262,9 @@ ggplot(wcgs_new, aes(x = Sbp0, y = ..density..)) +
         plot.subtitle = element_text(hjust = 0.5))
 ```
 
-b) Create a box plot for the <code>Sbp0</code> variable.
+b) Create a box plot for the <code>sbp0</code> variable.
 ```{r "3_b"}
-ggplot(wcgs_new, aes(y = Sbp0)) +
+ggplot(wcgs_new, aes(y = sbp0)) +
   geom_boxplot(width = 0.5) +
   scale_x_continuous(labels = NULL) +
   labs(y = "SBP in mmHg", 
@@ -243,4 +274,20 @@ ggplot(wcgs_new, aes(y = Sbp0)) +
   theme(plot.title = element_text(hjust = 0.5), 
         plot.subtitle = element_text(hjust = 0.5))
 ```
+
+c) Create a bar chart for the <code>sbp0</code> variable for each level of the <code>dibpat0</code> variable.
+```{r "3_c"}
+ggplot(wcgs_new, aes(y = sbp0)) +
+  geom_col(aes(x = dibpat0), 
+           position = "dodge",
+           fill = "orange",
+           width = 0.7) +
+  labs(y = "SBP in mmHg",
+       x = "Behavioral Pattern",
+       title = "Systolic Blood Pressure According to Behavioral Pattern",
+       subtitle = "WCGS: n = 3154 men ages 39 to 59") +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
 
