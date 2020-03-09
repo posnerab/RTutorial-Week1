@@ -183,13 +183,9 @@ a) First, view the structure of your dataset using the <code>str()</code> functi
 str(wcgs)
 ```
 
-b) Notice that the dichotomous behavioral pattern variable, <code>dibpat0</code>, is currently coded as an integer (1 = Type A, 0 = Type B). We want R to know that <code>behpat0</code> is a factor variable with 2 discrete levels: A and B. To do this, we will use the following code:
+b) Notice that the dichotomous behavioral pattern variable, <code>dibpat0</code>, is currently coded as an integer (1 = Type A, 0 = Type B). We want R to know that <code>behpat0</code> is a factor variable with 2 discrete levels: A and B. To do this, we will use the <code>factor()</code> function and create a new factor variable called <code>dibpat0_fact</code>.
 ```{r "2_b"}
-wcgs$dibpat0[wcgs$dibpat0 == 1] <- "A"
-
-wcgs$dibpat0[wcgs$dibpat0 == 0] <- "B"
-
-levels(wcgs$dibpat0) <- c("A", "B")
+wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c("A","B"))
 ```
 
 
@@ -293,4 +289,14 @@ ggplot(wcgs_new, aes(y = sbp0)) +
         plot.subtitle = element_text(hjust = 0.5))
 ```
 
+d) Create a two-way table of the behavioral pattern factor variable <code>dibpat0_fact</code> and high blood pressure <code>highsbp0</code>.
+```{r "3_d"}
+highsbp_dibpat_table <- table(wcgs_new$dibpat0_fact, wcgs_new$highsbp0)
+
+
+# You will model your tables in R Lab Workbook 1 on the following two table outputs
+
+addmargins(highsbp_dibpat_table)
+round(prop.table(highsbp_dibpat_table), digits = 3)
+```
 

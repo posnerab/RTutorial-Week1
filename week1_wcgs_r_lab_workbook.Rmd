@@ -1,0 +1,141 @@
+---
+title: "WCGS data lab workbook"
+author: "Maureen Lahiff"
+date: "March 6, 2020"
+---
+
+# this R Markdown file assumes you went through the Week 1 R Tutorial first
+
+
+```{r set libraries and read in data }
+library(tidyverse)
+library(epitools)
+library(readr)
+library(markdown)
+
+data(wcgs)
+```
+
+```{r variables we made in the Week 1 R Tutorial}
+wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c("A","B"))
+
+
+wcgs$smoker0[wcgs$ncigs0 > 0] <- 1
+wcgs$smoker0[wcgs$ncigs0 == 0] <- 0
+
+
+wcgs$highsbp0[wcgs$sbp0 >= 140] <- 1
+wcgs$highsbp0[wcgs$sbp0 < 140] <- 0
+
+
+wcgs$heightcm0 <- round(wcgs$height0 * 2.54, digits = 2)
+wcgs$weightkg0 <- round(wcgs$weight0/2.2, digits = 2)
+wcgs$BMI0 <- round(wcgs$weightkg0/((wcgs$heightcm0/100)^2), digits = 1)
+```
+
+
+```{r average cholesterol for smokers and non-smokers }
+
+# Question 1 to turn in
+
+# average cholesterol at baseline for smokers and non-smokers
+
+wcgs %>% group_by(smoker0) %>% summarize(average = mean(sbp0))
+```
+
+```{r recode behavioral patterns}
+
+# create a factor variable out of the 4-level behavioral pattern variable, behpat0
+
+wcgs$behpat0_fact <- factor(wcgs$behpat0,
+                           ordered = TRUE,
+                           labels = c("A", "some A", "mix A and B","B")) 
+```
+
+```{r create bmi categories}
+
+# cut gives us a lot of flexibility 
+# in our specifications of the interval endpoints 
+# the intervals here are the commonly used ones
+
+wcgs$bmi_cat <- cut(wcgs$BMI0,
+                    breaks = c(0, 18.5, 25.0, 30.0, Inf),
+                    include.lowest = TRUE,
+                    right = FALSE,
+                    ordered_results = TRUE,
+                    labels = c("underweight", "normal", "overweight", "obese") )
+
+```
+
+```{r be sure chd at 8 1/2 yr follow-up is a factor}
+
+wcgs$chd69 <- factor(wcgs$chd69, labels = c("No CHD", "CHD"))
+```
+
+
+```{r tables }
+
+# these are examples for additional tables
+
+behpat_table <- table(wcgs$behpat0_fact)
+addmargins(behpat_table)
+round(prop.table(behpat_table), digits = 3)
+
+
+
+# table for behavioral pattern and chd
+
+# the proportion option 1 asks for "row percents" in the two-way table 
+# this is Question 2 to turn in
+
+chd_behpat_table <- table(wcgs$behpat0_fact, wcgs$chd69)
+addmargins(chd_behpat_table)
+round(prop.table(chd_behpat_table, 1), digits = 3)
+
+```
+
+
+```{r side by side bar charts for chd69 by behavior pattern group}
+
+# this is Question 3 to turn in
+
+chd69_behpat0_table <- wcgs %>% count(behpat_fact, chd69) %>%
+  group_by(behpat_fact) %>%
+  mutate(prop = n/sum(n))  %>%
+  ggplot(aes(x = behpat_fact, y = prop, fill = chd69)) +
+  geom_bar(width = 0.5, stat = "identity", position = "dodge") +
+  labs(y = "percent", x = "behavior type", title = "Type A behavior and CHD at 8 1/2 year follow-up", 
+       subtitle = "n = 3154 men at baseline") +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5))
+
+chd69_behpat0_table
+```
+
+```{r summary, histogram, and box plots }
+
+# summary for BMI by CHD at 8 /12 yr follow-up
+
+no_chd_summary <- summary(subset(wcgs, chd69 == "No CHD", select = BMI0))
+
+chd_summary <- summary(subset(wcgs, chd69 == "CHD", select = BMI0))
+
+no_chd_summary
+chd_summary
+
+#use facet wrap to get side by side histgrams for baseline BMI by CHD
+
+ggplot(wcgs, aes(x = BMI0, y = ..density..)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "purple") +
+  facet_wrap(.~wcgs$chd69) + 
+  labs(title = "WCGS baseline BMI by CHD group",
+       subtitle = "men ages 39 to 59",
+       x = "BMI ",
+       y = "density" ) +
+  scale_x_continuous(limits = c(18.5, 40),
+                     breaks = c(20, 25, 30, 35),
+                     labels = c(20, 25, 30, 35)) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+
+```
+
