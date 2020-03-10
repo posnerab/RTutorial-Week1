@@ -1,0 +1,370 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={WCGS data lab workbook},
+            pdfauthor={Maureen Lahiff},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{WCGS data lab workbook}
+\author{Maureen Lahiff}
+\date{March 6, 2020}
+
+\begin{document}
+\maketitle
+
+\hypertarget{this-r-markdown-file-assumes-you-went-through-the-week-1-r-tutorial-first}{%
+\section{this R Markdown file assumes you went through the Week 1 R
+Tutorial
+first}\label{this-r-markdown-file-assumes-you-went-through-the-week-1-r-tutorial-first}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(readr)}
+\KeywordTok{library}\NormalTok{(epitools)}
+\KeywordTok{library}\NormalTok{(readr)}
+\KeywordTok{library}\NormalTok{(markdown)}
+
+\KeywordTok{data}\NormalTok{(wcgs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{dibpat0_fact <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{dibpat0, }\DataTypeTok{ordered =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{,}\StringTok{"B"}\NormalTok{))}
+
+
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{smoker0[wcgs}\OperatorTok{$}\NormalTok{ncigs0 }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\DecValTok{1}
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{smoker0[wcgs}\OperatorTok{$}\NormalTok{ncigs0 }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
+
+
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{highsbp0[wcgs}\OperatorTok{$}\NormalTok{sbp0 }\OperatorTok{>=}\StringTok{ }\DecValTok{140}\NormalTok{] <-}\StringTok{ }\DecValTok{1}
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{highsbp0[wcgs}\OperatorTok{$}\NormalTok{sbp0 }\OperatorTok{<}\StringTok{ }\DecValTok{140}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
+
+
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{heightcm0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{height0 }\OperatorTok{*}\StringTok{ }\FloatTok{2.54}\NormalTok{, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{weightkg0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{weight0}\OperatorTok{/}\FloatTok{2.2}\NormalTok{, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{BMI0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{weightkg0}\OperatorTok{/}\NormalTok{((wcgs}\OperatorTok{$}\NormalTok{heightcm0}\OperatorTok{/}\DecValTok{100}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Question 1 to turn in}
+
+\CommentTok{# average cholesterol at baseline for smokers and non-smokers}
+
+\NormalTok{wcgs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(smoker0) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{average =} \KeywordTok{mean}\NormalTok{(sbp0))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   smoker0 average
+##     <dbl>   <dbl>
+## 1       0    129.
+## 2       1    129.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# create a factor variable out of the 4-level behavioral pattern variable, behpat0}
+
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{behpat0_fact <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{behpat0,}
+                           \DataTypeTok{ordered =} \OtherTok{TRUE}\NormalTok{,}
+                           \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"some A"}\NormalTok{, }\StringTok{"mix A and B"}\NormalTok{,}\StringTok{"B"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# cut gives us a lot of flexibility }
+\CommentTok{# in our specifications of the interval endpoints }
+\CommentTok{# the intervals here are the commonly used ones}
+
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{bmi_cat <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{BMI0,}
+                    \DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{18.5}\NormalTok{, }\FloatTok{25.0}\NormalTok{, }\FloatTok{30.0}\NormalTok{, }\OtherTok{Inf}\NormalTok{),}
+                    \DataTypeTok{include.lowest =} \OtherTok{TRUE}\NormalTok{,}
+                    \DataTypeTok{right =} \OtherTok{FALSE}\NormalTok{,}
+                    \DataTypeTok{ordered_results =} \OtherTok{TRUE}\NormalTok{,}
+                    \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"underweight"}\NormalTok{, }\StringTok{"normal"}\NormalTok{, }\StringTok{"overweight"}\NormalTok{, }\StringTok{"obese"}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wcgs}\OperatorTok{$}\NormalTok{chd69 <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{chd69, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"No CHD"}\NormalTok{, }\StringTok{"CHD"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# these are examples for additional tables}
+
+\NormalTok{behpat_table <-}\StringTok{ }\KeywordTok{table}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{behpat0_fact)}
+\KeywordTok{addmargins}\NormalTok{(behpat_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##           A      some A mix A and B           B         Sum 
+##         264        1325        1216         349        3154
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{round}\NormalTok{(}\KeywordTok{prop.table}\NormalTok{(behpat_table), }\DataTypeTok{digits =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##           A      some A mix A and B           B 
+##       0.084       0.420       0.386       0.111
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# table for behavioral pattern and chd}
+
+\CommentTok{# the proportion option 1 asks for "row percents" in the two-way table }
+\CommentTok{# this is Question 2 to turn in}
+
+\NormalTok{chd_behpat_table <-}\StringTok{ }\KeywordTok{table}\NormalTok{(wcgs}\OperatorTok{$}\NormalTok{behpat0_fact, wcgs}\OperatorTok{$}\NormalTok{chd69)}
+\KeywordTok{addmargins}\NormalTok{(chd_behpat_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              
+##               No CHD  CHD  Sum
+##   A              234   30  264
+##   some A        1177  148 1325
+##   mix A and B   1155   61 1216
+##   B              331   18  349
+##   Sum           2897  257 3154
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{round}\NormalTok{(}\KeywordTok{prop.table}\NormalTok{(chd_behpat_table, }\DecValTok{1}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              
+##               No CHD   CHD
+##   A            0.886 0.114
+##   some A       0.888 0.112
+##   mix A and B  0.950 0.050
+##   B            0.948 0.052
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# this is Question 3 to turn in}
+
+\NormalTok{wcgs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(behpat0_fact, chd69) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(behpat0_fact) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{prop =}\NormalTok{ n}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(n))  }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ behpat0_fact, }\DataTypeTok{y =}\NormalTok{ prop, }\DataTypeTok{fill =}\NormalTok{ chd69)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{position =} \StringTok{"dodge"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"percent"}\NormalTok{, }\DataTypeTok{x =} \StringTok{"behavior type"}\NormalTok{, }\DataTypeTok{title =} \StringTok{"Type A behavior and CHD at 8 1/2 year follow-up"}\NormalTok{, }
+       \DataTypeTok{subtitle =} \StringTok{"n = 3154 men at baseline"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{), }\DataTypeTok{plot.subtitle =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{week1_wcgs_r_lab_workbook_files/figure-latex/side by side bar charts for chd69 by behavior pattern group-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# summary for BMI by CHD at 8 /12 yr follow-up}
+
+\NormalTok{no_chd_summary <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(}\KeywordTok{subset}\NormalTok{(wcgs, chd69 }\OperatorTok{==}\StringTok{ "No CHD"}\NormalTok{, }\DataTypeTok{select =}\NormalTok{ BMI0))}
+
+\NormalTok{chd_summary <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(}\KeywordTok{subset}\NormalTok{(wcgs, chd69 }\OperatorTok{==}\StringTok{ "CHD"}\NormalTok{, }\DataTypeTok{select =}\NormalTok{ BMI0))}
+
+\NormalTok{no_chd_summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       BMI0      
+##  Min.   :11.20  
+##  1st Qu.:22.90  
+##  Median :24.40  
+##  Mean   :24.53  
+##  3rd Qu.:25.90  
+##  Max.   :37.70
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{chd_summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       BMI0      
+##  Min.   :19.30  
+##  1st Qu.:23.70  
+##  Median :24.90  
+##  Mean   :25.11  
+##  3rd Qu.:26.60  
+##  Max.   :39.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#use facet wrap to get side by side histgrams for baseline BMI by CHD}
+
+\KeywordTok{ggplot}\NormalTok{(wcgs, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ BMI0, }\DataTypeTok{y =}\NormalTok{ ..density..)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{binwidth =} \DecValTok{1}\NormalTok{, }\DataTypeTok{color =} \StringTok{"black"}\NormalTok{, }\DataTypeTok{fill =} \StringTok{"purple"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(.}\OperatorTok{~}\NormalTok{wcgs}\OperatorTok{$}\NormalTok{chd69) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"WCGS baseline BMI by CHD group"}\NormalTok{,}
+       \DataTypeTok{subtitle =} \StringTok{"men ages 39 to 59"}\NormalTok{,}
+       \DataTypeTok{x =} \StringTok{"BMI "}\NormalTok{,}
+       \DataTypeTok{y =} \StringTok{"density"}\NormalTok{ ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{limits =} \KeywordTok{c}\NormalTok{(}\FloatTok{18.5}\NormalTok{, }\DecValTok{40}\NormalTok{),}
+                     \DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{),}
+                     \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{),}
+        \DataTypeTok{plot.subtitle =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 20 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values (geom_bar).
+\end{verbatim}
+
+\includegraphics{week1_wcgs_r_lab_workbook_files/figure-latex/summary, histogram, and box plots-1.pdf}
+
+\end{document}

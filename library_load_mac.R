@@ -9,17 +9,18 @@
 
 # EACH TIME you open RStudio thereafter, do the following:
 # 1. open this document again
-# 2. press control+A to select all text
+# 2. press command+A to select all text
 # 3. click Run to load all libraries
 
 library(rmarkdown)
 library(knitr)
 library(epiR)
 library(stats)
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
 library(readxl)
 library(epitools)
 library(exact2x2)
 library(MESS)
 library(pwr)
-library(DescTools)
