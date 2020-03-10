@@ -786,3 +786,147 @@
 ,
 {"type":["check_chunk"],"time":["2020-03-08 18:03:27"],"user":["default_user"],"umph":[1583715807.9589],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["highsbp_dibpat_table <- table(wcgs_new$dibpat0_fact, wcgs_new$highsbp0)\n\n\n# You will model your tables in R Lab Workbook 1 on the following two table outputs\n\naddmargins(highsbp_dibpat_table)\nround(prop.table(highsbp_dibpat_table), digits = 3)"],"message":[""]}
 ,
+{"type":["init_ps"],"time":["2020-03-09 14:09:49"],"user":["default_user"],"umph":[1583788189.0987],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:32:54"],"user":["default_user"],"umph":[1583811174.7164],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:44:39"],"user":["default_user"],"umph":[1583811879.7634],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:06"],"user":["default_user"],"umph":[1583811906.0912],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:15"],"user":["default_user"],"umph":[1583811915.4458],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c(\"A\",\"B\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:18"],"user":["default_user"],"umph":[1583811918.2215],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0\n\nwcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0."],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:26"],"user":["default_user"],"umph":[1583811926.4102],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs$highsbp0[wcgs$sbp0 >= 140] <- 1\n\nwcgs$highsbp0[wcgs$sbp0 < 140] <- 0\n\n# now make highsbp0 a factor variable with 2 levels\n\nwcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c(\"normal sbp\", \"high sbp\"))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:45:41"],"user":["default_user"],"umph":[1583811941.9043],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:48"],"user":["default_user"],"umph":[1583811948.7668],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["library(epitools)\nlibrary(tidyverse) # helps us make charts and graphics\nlibrary(readr)\nlibrary(markdown)\nlibrary(DescTools)\n\ndata(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:51"],"user":["default_user"],"umph":[1583811951.382],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:53"],"user":["default_user"],"umph":[1583811953.1017],"ok":[true],"chunk":[3],"ex":[2],"e.ind":[0],"code":["n <- nrow(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:54"],"user":["default_user"],"umph":[1583811954.5509],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:54"],"user":["default_user"],"umph":[1583811954.7077],"ok":[true],"chunk":[4],"ex":[2],"e.ind":[0],"code":["nrow(wcgs) # PRINTS to the console but DOES NOT save the value\n\nn <- nrow(wcgs) # SAVES the value but DOES NOT print\n\nn # PRINTS out the results that you previously saved above\n\nn + 1 # adds 1 to the value saved in the n object: example of what you can do with stored objects in your environment\n\nprint(n <- nrow(wcgs)) # SAVES the value AND also PRINTS to the console in one step"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:45:58"],"user":["default_user"],"umph":[1583811958.4531],"ok":[true],"chunk":[5],"ex":[2],"e.ind":[0],"code":["summary(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:46:08"],"user":["default_user"],"umph":[1583811968.6649],"ok":[true],"chunk":[6],"ex":[2],"e.ind":[0],"code":["summary_age0 <- summary(wcgs$age0)\nsummary_age0\n\n\nsummary_height0 <- summary(wcgs$height0)\nsummary_height0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:46:14"],"user":["default_user"],"umph":[1583811974.2294],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:46:16"],"user":["default_user"],"umph":[1583811976.5871],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c(\"A\",\"B\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:46:18"],"user":["default_user"],"umph":[1583811978.011],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0\n\nwcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0."],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:46:24"],"user":["default_user"],"umph":[1583811984.2232],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["\n\nwcgs$highsbp0[wcgs$sbp0 >= 140] <- 1\n\nwcgs$highsbp0[wcgs$sbp0 < 140] <- 0\n\n# now make highsbp0 a factor variable with 2 levels\n\nwcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c(\"normal sbp\", \"high sbp\"))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:47:39"],"user":["default_user"],"umph":[1583812059.8182],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:47:47"],"user":["default_user"],"umph":[1583812067.9301],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:47:51"],"user":["default_user"],"umph":[1583812071.2225],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["library(epitools)\nlibrary(tidyverse) # helps us make charts and graphics\nlibrary(readr)\nlibrary(markdown)\nlibrary(DescTools)\n\ndata(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:47:53"],"user":["default_user"],"umph":[1583812073.2388],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:48:33"],"user":["default_user"],"umph":[1583812113.4454],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:48:33"],"user":["default_user"],"umph":[1583812113.6523],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:48:37"],"user":["default_user"],"umph":[1583812117.2903],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:48:38"],"user":["default_user"],"umph":[1583812118.569],"ok":[false],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":["evaluation error in \n  str(wcgs)\n  Error in str(wcgs): object 'wcgs' not found\n"]}
+,
+{"type":["hint"],"time":["2020-03-09 20:48:38"],"user":["default_user"],"umph":[1583812118.5846],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:50:42"],"user":["default_user"],"umph":[1583812242.6912],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:50:49"],"user":["default_user"],"umph":[1583812249.5847],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:50:52"],"user":["default_user"],"umph":[1583812252.162],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c(\"A\",\"B\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:50:53"],"user":["default_user"],"umph":[1583812253.9199],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0\n\nwcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0."],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:51:41"],"user":["default_user"],"umph":[1583812301.344],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["\n\nwcgs$highsbp0[wcgs$sbp0 >= 140] <- 1\n\nwcgs$highsbp0[wcgs$sbp0 < 140] <- 0\n\n# now make highsbp0 a factor variable with 2 levels\n\nwcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c(\"normal sbp\", \"high sbp\"))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 20:55:15"],"user":["default_user"],"umph":[1583812515.9192],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:22"],"user":["default_user"],"umph":[1583812522.7091],"ok":[true],"chunk":[7],"ex":[3],"e.ind":[0],"code":["str(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:25"],"user":["default_user"],"umph":[1583812525.383],"ok":[true],"chunk":[8],"ex":[3],"e.ind":[0],"code":["wcgs$dibpat0_fact <- factor(wcgs$dibpat0, ordered = TRUE, labels = c(\"A\",\"B\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:27"],"user":["default_user"],"umph":[1583812527.0983],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0\n\nwcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0."],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:27"],"user":["default_user"],"umph":[1583812527.2108],"ok":[true],"chunk":[9],"ex":[3],"e.ind":[0],"code":["wcgs$smoker0[wcgs$ncigs0 > 0] <- 1 # creates a new variable called smoker0 and sets the value to 1 for all individuals with ncigs0 > 0\n\nwcgs$smoker0[wcgs$ncigs0 == 0] <- 0 # sets the value of smoker0 to 0 for all individuals with ncigs = 0."],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:42"],"user":["default_user"],"umph":[1583812542.2283],"ok":[true],"chunk":[10],"ex":[3],"e.ind":[0],"code":["wcgs$highsbp0[wcgs$sbp0 >= 140] <- 1\n\nwcgs$highsbp0[wcgs$sbp0 < 140] <- 0"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:44"],"user":["default_user"],"umph":[1583812544.3596],"ok":[true],"chunk":[11],"ex":[3],"e.ind":[0],"code":["wcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c(\"normal sbp\", \"high sbp\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:51"],"user":["default_user"],"umph":[1583812551.1566],"ok":[true],"chunk":[12],"ex":[3],"e.ind":[0],"code":["wcgs$heightcm0 <- round(wcgs$height0 * 2.54, digits = 2)\n# this line of code tells R to take the Height0 value for each individual (row) in the wcgs dataset, multiply it by 2.54, round the result to 2 decimal places (digits), and then add the value to a new variable (column) we named Heightcm0.\n\nwcgs$weightkg0 <- round(wcgs$weight0/2.2, digits = 2)\n\nwcgs$BMI0 <- round(wcgs$weightkg0/((wcgs$heightcm0/100)^2), digits = 1)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:58"],"user":["default_user"],"umph":[1583812558.009],"ok":[true],"chunk":[13],"ex":[3],"e.ind":[0],"code":["wcgs_new <- write_csv(wcgs, \"wcgs_data_new.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 20:55:59"],"user":["default_user"],"umph":[1583812559.4455],"ok":[true],"chunk":[14],"ex":[3],"e.ind":[0],"code":["head(wcgs_new)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:07:29"],"user":["default_user"],"umph":[1583813249.874],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:08:50"],"user":["default_user"],"umph":[1583813330.4593],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:08:57"],"user":["default_user"],"umph":[1583813337.2144],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:09:02"],"user":["default_user"],"umph":[1583813342.1132],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:09:06"],"user":["default_user"],"umph":[1583813346.2633],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:09:21"],"user":["default_user"],"umph":[1583813361.7185],"ok":[true],"chunk":[18],"ex":[4],"e.ind":[0],"code":["highsbp_dibpat_table <- table(wcgs_new$dibpat0_fact, wcgs_new$highsbp0)\n\n\n# You will model your tables in R Lab Workbook 1 on the following two table outputs\n\naddmargins(highsbp_dibpat_table)\nround(prop.table(highsbp_dibpat_table), digits = 3)"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:12:20"],"user":["default_user"],"umph":[1583813540.6416],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:12:26"],"user":["default_user"],"umph":[1583813546.7942],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:12:27"],"user":["default_user"],"umph":[1583813547.2841],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:12:30"],"user":["default_user"],"umph":[1583813550.9075],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:12:59"],"user":["default_user"],"umph":[1583813579.5944],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:13:04"],"user":["default_user"],"umph":[1583813584.7911],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:13:08"],"user":["default_user"],"umph":[1583813588.9628],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:13:11"],"user":["default_user"],"umph":[1583813591.9506],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:15:01"],"user":["default_user"],"umph":[1583813701.1849],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:15:07"],"user":["default_user"],"umph":[1583813707.4075],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:15:07"],"user":["default_user"],"umph":[1583813707.9597],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:15:08"],"user":["default_user"],"umph":[1583813708.4814],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:15:11"],"user":["default_user"],"umph":[1583813711.0535],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:21:52"],"user":["default_user"],"umph":[1583814112.5669],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:21:58"],"user":["default_user"],"umph":[1583814118.2298],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:01"],"user":["default_user"],"umph":[1583814121.2729],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:01"],"user":["default_user"],"umph":[1583814121.8667],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:05"],"user":["default_user"],"umph":[1583814125.7702],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0_fact), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["init_ps"],"time":["2020-03-09 21:22:36"],"user":["default_user"],"umph":[1583814156.5402],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:42"],"user":["default_user"],"umph":[1583814162.0208],"ok":[true],"chunk":[15],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +\n  geom_histogram(binwidth = 10, \n                 color = \"black\", \n                 fill = \"blue\") +\n  labs(title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\", \n       x = \"SBP in mmHg\", y = \"Density\" ) +\n  scale_x_continuous(limits = c(0, 250), \n                     breaks = c(50, 100, 150, 200, 250), \n                     labels = c(50, 100, 150, 200, 250)) +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:44"],"user":["default_user"],"umph":[1583814164.463],"ok":[true],"chunk":[16],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_boxplot(width = 0.5) +\n  scale_x_continuous(labels = NULL) +\n  labs(y = \"SBP in mmHg\", \n       x = \"\", \n       title = \"WCGS Systolic Blood Pressure at Baseline\", \n       subtitle = \"n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5), \n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:46"],"user":["default_user"],"umph":[1583814166.8344],"ok":[true],"chunk":[17],"ex":[4],"e.ind":[0],"code":["ggplot(wcgs_new, aes(y = sbp0)) +\n  geom_col(aes(x = dibpat0_fact), \n           position = \"dodge\",\n           fill = \"orange\",\n           width = 0.7) +\n  labs(y = \"SBP in mmHg\",\n       x = \"Behavioral Pattern\",\n       title = \"Systolic Blood Pressure According to Behavioral Pattern\",\n       subtitle = \"WCGS: n = 3154 men ages 39 to 59\") +\n  theme(plot.title = element_text(hjust = 0.5),\n        plot.subtitle = element_text(hjust = 0.5))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-09 21:22:56"],"user":["default_user"],"umph":[1583814176.4432],"ok":[true],"chunk":[18],"ex":[4],"e.ind":[0],"code":["highsbp_dibpat_table <- table(wcgs_new$dibpat0_fact, wcgs_new$highsbp0)\n\n\n# You will model your tables in R Lab Workbook 1 on the following two table outputs\n\naddmargins(highsbp_dibpat_table)\nround(prop.table(highsbp_dibpat_table), digits = 3)"],"message":[""]}
+,

@@ -2,6 +2,7 @@
 title: "WCGS data lab workbook"
 author: "Maureen Lahiff"
 date: "March 6, 2020"
+output: pdf_document
 ---
 
 # this R Markdown file assumes you went through the Week 1 R Tutorial first
@@ -99,10 +100,10 @@ round(prop.table(chd_behpat_table, 1), digits = 3)
 
 # this is Question 3 to turn in
 
-chd69_behpat0_table <- wcgs %>% count(behpat_fact, chd69) %>%
-  group_by(behpat_fact) %>%
+chd69_behpat0_table <- wcgs %>% count(behpat0_fact, chd69) %>%
+  group_by(behpat0_fact) %>%
   mutate(prop = n/sum(n))  %>%
-  ggplot(aes(x = behpat_fact, y = prop, fill = chd69)) +
+  ggplot(aes(x = behpat0_fact, y = prop, fill = chd69)) +
   geom_bar(width = 0.5, stat = "identity", position = "dodge") +
   labs(y = "percent", x = "behavior type", title = "Type A behavior and CHD at 8 1/2 year follow-up", 
        subtitle = "n = 3154 men at baseline") +

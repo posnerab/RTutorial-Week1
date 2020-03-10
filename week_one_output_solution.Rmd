@@ -108,7 +108,7 @@ knitr::opts_chunk$set(error = TRUE)
 <li><code>nrow()</code> to view the number of rows in your dataset</li>
 <li><code>str()</code> to view the "structure" of your dataset, including variable names and types</li>
 <li><code>summary()</code> to produce summary statistics</li>
-<li><code>ggplot()</code>, <code>geom_histogram()</code>, <code>geom_boxplot()</code>, and <code>geom_col</code> to create histograms, boxplots, and bar charts</li>
+<li><code>ggplot()</code>, <code>geom_histogram()</code>, <code>geom_boxplot()</code>, and <code>geom_col()</code> to create histograms, boxplots, and bar charts</li>
 </ul>
 
 
@@ -249,12 +249,14 @@ d) Now try making a "yes/no" factor variable for systolic blood pressure, <code>
 
 "<<<<<<YOUR CODE HERE>>>>>>" <- 0
 
+
 wcgs$highsbp0[wcgs$sbp0 >= 140] <- 1
 
 wcgs$highsbp0[wcgs$sbp0 < 140] <- 0
+```
 
-# now make highsbp0 a factor variable with 2 levels
-
+e) Now make <code>highsbp0</code> a factor variable with 2 levels
+```{r "2_e_11"}
 wcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c("normal sbp", "high sbp"))
 ```
 
@@ -263,8 +265,8 @@ wcgs$highsbp0 <- factor(wcgs$highsbp0, labels = c("normal sbp", "high sbp"))
 
 <p>The <code>wcgs</code> dataset has the height variable, <code>height0</code>, in inches (in) and the weight variable, <code>weight0</code>, in pounds (lbs). We want to analyze BMI, which is equal to weight (mass) in kilograms divided by height in meters squared, so we'll have to convert height to centimeters (cm) and weight to kilograms (kg).</p>
 
-e) Create new variables for height, weight, and BMI in the wcgs dataset by using the assignment operator (<-) like so:
-```{r "2_e_11"}
+f) Create new variables for height, weight, and BMI in the wcgs dataset by using the assignment operator (<-) like so:
+```{r "2_f_12"}
 wcgs$heightcm0 <- round(wcgs$height0 * 2.54, digits = 2)
 # this line of code tells R to take the Height0 value for each individual (row) in the wcgs dataset, multiply it by 2.54, round the result to 2 decimal places (digits), and then add the value to a new variable (column) we named Heightcm0.
 
@@ -273,20 +275,20 @@ wcgs$weightkg0 <- round(wcgs$weight0/2.2, digits = 2)
 wcgs$BMI0 <- round(wcgs$weightkg0/((wcgs$heightcm0/100)^2), digits = 1)
 ```
 
-f) This chunk writes the <code>wcgs</code>data frame, including the new variables we created, to a comma separated value (.csv) file named "wcgs_data_new.csv". The csv file is then loaded into R and assigned to the <code>wcgs_new</code> object so it can be called later on.
-```{r "2_f_12"}
+g) This chunk writes the <code>wcgs</code>data frame, including the new variables we created, to a comma separated value (.csv) file named "wcgs_data_new.csv". The csv file is then loaded into R and assigned to the <code>wcgs_new</code> object so it can be called later on.
+```{r "2_g_13"}
 wcgs_new <- write_csv(wcgs, "wcgs_data_new.csv")
 ```
 
-g) Now, use the head() function again to view the first six lines of the <code>wcgs_new</code> dataset. You will notice that there are now five new columns with the variable names we assigned and the values we calculated.
-```{r "2_g_13"}
+h) Now, use the head() function again to view the first six lines of the <code>wcgs_new</code> dataset. You will notice that there are now five new columns with the variable names we assigned and the values we calculated.
+```{r "2_h_14"}
 head(wcgs_new)
 ```
 
 ## Exercise 3 -- Create Histograms & Box Plots
 
 a) Create a histogram for the <code>sbp0</code> variable.
-```{r "3_a_14"}
+```{r "3_a_15"}
 ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +
   geom_histogram(binwidth = 10, 
                  color = "black", 
@@ -302,7 +304,7 @@ ggplot(wcgs_new, aes(x = sbp0, y = ..density..)) +
 ```
 
 b) Create a box plot for the <code>sbp0</code> variable.
-```{r "3_b_15"}
+```{r "3_b_16"}
 ggplot(wcgs_new, aes(y = sbp0)) +
   geom_boxplot(width = 0.5) +
   scale_x_continuous(labels = NULL) +
@@ -315,9 +317,9 @@ ggplot(wcgs_new, aes(y = sbp0)) +
 ```
 
 c) Create a bar chart for the <code>sbp0</code> variable for each level of the <code>dibpat0</code> variable.
-```{r "3_c_16"}
+```{r "3_c_17"}
 ggplot(wcgs_new, aes(y = sbp0)) +
-  geom_col(aes(x = dibpat0), 
+  geom_col(aes(x = dibpat0_fact), 
            position = "dodge",
            fill = "orange",
            width = 0.7) +
@@ -330,7 +332,7 @@ ggplot(wcgs_new, aes(y = sbp0)) +
 ```
 
 d) Create a two-way table of the behavioral pattern factor variable <code>dibpat0_fact</code> and high blood pressure <code>highsbp0</code>.
-```{r "3_d_17"}
+```{r "3_d_18"}
 highsbp_dibpat_table <- table(wcgs_new$dibpat0_fact, wcgs_new$highsbp0)
 
 

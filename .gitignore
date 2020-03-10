@@ -27,4 +27,4 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 token.R
-week1_wcgs_r_lab_workbook.Rmd
+week1_wcgs_r_lab_workbook_old.Rmd
