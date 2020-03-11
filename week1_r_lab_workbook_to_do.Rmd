@@ -1,0 +1,63 @@
+# R code for the parts of the Lab Workbook
+# students needed to create by adapting chunks
+# in practice problems and R Lab Workbook R Markdown files
+
+
+```{r 2 by 2 table for high cholesterol and CHD}
+
+chd_chol_table <- table(wcgs$HighChol0, wcgs$Chd69)
+addmargins(chd_chol_table)
+round(prop.table(chd_chol_table, 1), digits=3)
+
+
+```
+
+```{r bmi categories and chd)
+
+wcgs$bmi_cat <- cut(wcgs$BMI0, breaks = c(0, 18.5, 25.0, 30.0, Inf), include.lowest = TRUE, right = FALSE, ordered_results = TRUE, labels = c("underwt", "normal", "overwt", "obese") )
+
+chd_bmi_table <- table(wcgs$bmi_cat, wcgs$Chd69)
+addmargins(chd_bmi_table)
+round(prop.table(chd_bmi_table, 1), digits=3)
+
+```
+
+```{r smoking at baseline and chd}
+
+chd_smoker_table <- table(wcgs$Smoker0, wcgs$Chd69)
+addmargins(chd_smoker_table)
+round(prop.table(chd_smoker_table, 1), digits=3)
+
+
+```
+
+```{r histogram for Weight0 values}
+
+summary(wcgs$Weight0)
+
+ggplot(wcgs, aes(x = Weight0, y = ..density..)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "blue") +
+  labs(   
+    title = "WCGS weights at baseline", 
+    subtitle = "n = 3154 men ages 39 to 59", 
+    x = "weight in pounds", y = "density" ) +
+  scale_x_continuous(limits = c(75, 325)  , 
+                     breaks = c(100, 150, 200,  250, 300) ,
+                     labels = c(100, 150, 200,  250, 300) ) +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5))
+
+```
+
+```{r box plot for Weight0 values}
+
+ggplot(wcgs, aes(y = Weight0) ) +
+  geom_boxplot(width = 0.5) +
+  scale_x_continuous(labels = NULL) +
+  labs(y = "baseline weight in pounds", x = "",      
+       title = "WCGS weight at baseline", 
+       subtitle = "n = 3154 men ages 39 to 59") +
+  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5))
+
+```
+summary(wcgs$Weight0)
+

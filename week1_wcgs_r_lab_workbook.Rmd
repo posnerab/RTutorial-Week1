@@ -2,11 +2,6 @@
 title: "WCGS data lab workbook"
 author: "Maureen Lahiff"
 date: "March 6, 2020"
-output:
-  html_document:
-    df_print: paged
-  pdf_document: default
-  word_document: default
 ---
 
 # this R Markdown file assumes you went through the Week 1 R Tutorial first
