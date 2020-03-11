@@ -3,8 +3,7 @@
 ps.name = "week_one" # problem set name
 libs = c("tidyverse",
          "epitools",
-         "readr",
-         "markdown",
+         "rmarkdown",
          "DescTools") # list of all libraries used by ps
 # Folder that contains your .rps file
 rps.dir = "~/R/shinyapps/RTutorial-Week1"

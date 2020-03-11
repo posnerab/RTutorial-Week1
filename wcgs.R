@@ -1,7 +1,6 @@
 library(epitools)
 library(tidyverse) # helps us make charts and graphics
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 
 wcgs <- read_csv("wcgs_data.csv", col_names = TRUE)

@@ -1,8 +1,7 @@
 library(RTutor)
 library(tidyverse)
 library(epitools)
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 
 setwd("./work")

@@ -11,8 +11,7 @@ output:
 # Load libraries and source extra code
 library(tidyverse)
 library(epitools)
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 library(RTutor)
 source("wcgs.R")
@@ -129,8 +128,7 @@ a) The <code>wcgs</code> dataset is built into the <code>epitools</code> package
 ```{r "1_a"}
 library(epitools)
 library(tidyverse) # helps us make charts and graphics
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 
 data(wcgs)
@@ -192,6 +190,9 @@ summary_age0
 
 summary_height0 <- "<<<<<<YOUR CODE HERE>>>>>>"
 summary_height0
+
+summary_age0 <- summary(wcgs$age0)
+summary_age0
 
 summary_height0 <- summary(wcgs$height0)
 summary_height0

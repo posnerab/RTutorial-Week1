@@ -106,8 +106,7 @@ a) The <code>wcgs</code> dataset is built into the <code>epitools</code> package
 ```{r "1_a"}
 library(epitools)
 library(tidyverse) # helps us make charts and graphics
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 
 data(wcgs)

@@ -8,8 +8,7 @@ setwd(getwd())
 ps.name = "week_one"; sol.file = paste0(ps.name,"_sol.Rmd")
 libs = c("tidyverse",
          "epitools",
-         "readr",
-         "markdown",
+         "rmarkdown",
          "DescTools") # character vector of all packages you load in the problem set
 
 name.rmd.chunks(sol.file)
@@ -116,8 +115,7 @@ a) The <code>wcgs</code> dataset is built into the <code>epitools</code> package
 #< task
 library(epitools)
 library(tidyverse) # helps us make charts and graphics
-library(readr)
-library(markdown)
+library(rmarkdown)
 library(DescTools)
 
 data(wcgs)
@@ -183,16 +181,16 @@ summary(wcgs)
 
 f) Use the dollar sign <code>$</code> to access different variables in your dataset. The first one is done for you. Fill in the code below to summarize the <code>height0</code> variable.
 ```{r "1_f"}
-#< task
+#< task_notest
 summary_age0 <- summary(wcgs$age0)
 summary_age0
 
-#>
-
-#< task_notest
 summary_height0 <- "<<<<<<YOUR CODE HERE>>>>>>"
 summary_height0
 #>
+
+summary_age0 <- summary(wcgs$age0)
+summary_age0
 
 summary_height0 <- summary(wcgs$height0)
 summary_height0
