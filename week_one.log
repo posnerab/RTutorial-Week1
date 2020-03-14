@@ -980,3 +980,11 @@
 ,
 {"type":["init_ps"],"time":["2020-03-11 15:49:58"],"user":["default_user"],"umph":[1583966998.3698],"ok":[true]}
 ,
+{"type":["init_ps"],"time":["2020-03-13 17:59:36"],"user":["default_user"],"umph":[1584147576.0003],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2020-03-13 18:00:59"],"user":["default_user"],"umph":[1584147659.5669],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2020-03-13 18:01:54"],"user":["default_user"],"umph":[1584147714.4506],"ok":[true],"chunk":[1],"ex":[2],"e.ind":[0],"code":["library(epitools)\nlibrary(tidyverse) # helps us make charts and graphics\nlibrary(rmarkdown)\nlibrary(DescTools)\n\ndata(wcgs)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2020-03-13 18:01:59"],"user":["default_user"],"umph":[1584147719.7234],"ok":[true],"chunk":[2],"ex":[2],"e.ind":[0],"code":["head(wcgs) # view the first six rows of the dataset in table format"],"message":[""]}
+,
