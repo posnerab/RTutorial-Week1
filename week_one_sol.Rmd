@@ -1,6 +1,10 @@
 #< ignore
     Save the file as `week_one_sol.Rmd`.
     Run setup chunk in RStudio.
+    
+titlePanel(title = tags$head(tags$link(rel = "shortcut icon",
+href = "https://raw.githubusercontent.com/posnerab/RTutorial-Week1/master/www/favicon.ico",
+type = "www/favicon.ico")
 
 ```{r ""}
 library(RTutor)
