@@ -1,6 +1,9 @@
 # RTutorial Week 1
 ## Descriptive Statistics and Data Visualization using ggplot2
-PHW 142 Spring 2020 R Tutorials
+
+PBHLTH  W142 Spring 2020 R Tutorial
+School of Public Health
+University of California, Berkeley
 
 <p>Access the bCourses site for this week <a href="https://bcourses.berkeley.edu/courses/1492482/pages/week-1">here</a></p>
 
@@ -8,4 +11,6 @@ PHW 142 Spring 2020 R Tutorials
 
 	This Shiny app was made in RStudio.
 
-<p>© 2020 Xander Posner, <a href="mailto:xander@berkeley.edu?subject=PHW142">xander@berkeley.edu</a></p>
+<p>Author: Xander Posner, <a href="mailto:xander@berkeley.edu?subject=PHW142">xander@berkeley.edu</a></p>
+
+Copyright © 2020 Prof. Maureen Lahiff, Ph.D. & UC Berkeley
