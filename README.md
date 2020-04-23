@@ -7,8 +7,9 @@
 <p>School of Public Health</p>
 <p>University of California, Berkeley<br />
 <br />
-<p>Stable URL: https://xandersph.shinyapps.io/RTutorial-Week1/</p>
-
+<p>Stable URL: https://xandersph.shinyapps.io/RTutorial-Week1/<br />
+<br />
+	
 	This Shiny app was made in RStudio.
 	
 <p>Learn more about building Shiny apps <a href="https://docs.rstudio.com/shinyapps.io/">here</a><br />
